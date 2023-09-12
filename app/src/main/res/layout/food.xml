@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f7fff3"
+        android:background="#00A9FF7F"
         tools:context=".FoodPage">
-
-
-
 
 
     <LinearLayout android:layout_width="match_parent"
@@ -53,7 +50,70 @@
                 android:background="#eaffe0"
                 android:layout_weight="1"/>
     </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="844dp">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:text="🍚 이유식 목록"
+                        android:textSize="28dp"
+                        android:layout_height="50dp" android:id="@+id/textView" android:textStyle="bold"
+                        android:layout_width="361dp"/>
+                <Button
+                        android:text="Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/button6"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="397dp" android:visibility="visible" android:background="#00FFFFFF">
+
+            <TextView
+                    android:text="⭐인기"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" android:id="@+id/textView2"/>
+            <ListView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="397dp" android:visibility="visible">
+            <TextView
+                    android:text="⏲️최신"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" android:id="@+id/textView3"/>
+            <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:text="Button"
+                android:layout_width="120dp"
+                android:layout_height="50dp" android:id="@+id/button5" android:translationY="790dp"
+                android:translationX="280dp"/>
+    </FrameLayout>
 
 
-</LinearLayout>
+</FrameLayout>
 
