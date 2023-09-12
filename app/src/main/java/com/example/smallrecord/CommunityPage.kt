@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 class CommunityPage : AppCompatActivity() {
 
@@ -49,6 +51,27 @@ class CommunityPage : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
 
+        }
+
+
+        val listView = findViewById<ListView>(R.id.listView)
+
+
+        val itemList = listOf(
+            "게시물 1: 제목 1",
+            "게시물 2: 제목 2",
+            "게시물 3: 제목 3",
+            "게시물 4: 제목 4",
+            "게시물 5: 제목 5"
+        )
+
+        // 어댑터 설정
+        val adapter = ArrayAdapter(this, R.layout.community, R.id.textViewTitle, itemList)
+        listView.adapter = adapter
+
+
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedItem = itemList[position]
         }
     }
 }
