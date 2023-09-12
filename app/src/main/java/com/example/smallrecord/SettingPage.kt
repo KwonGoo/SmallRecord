@@ -18,6 +18,7 @@ class SettingPage : AppCompatActivity() {
         foodB.setOnClickListener {
             val intent = Intent(this, FoodPage::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
         val babyB = findViewById<ImageButton>(R.id.babyButton)
@@ -25,6 +26,7 @@ class SettingPage : AppCompatActivity() {
         babyB.setOnClickListener {
             val intent = Intent(this, BabyPage::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
         val diaryB = findViewById<ImageButton>(R.id.diaryButton)
@@ -32,6 +34,7 @@ class SettingPage : AppCompatActivity() {
         diaryB.setOnClickListener{
             val intent = Intent(this, DiaryPage::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
         val communityB = findViewById<ImageButton>(R.id.communityButton)
@@ -39,15 +42,10 @@ class SettingPage : AppCompatActivity() {
         communityB.setOnClickListener {
             val intent = Intent(this, CommunityPage::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
-        val settingB = findViewById<ImageButton>(R.id.settingButton)
 
-        settingB.setOnClickListener {
-            val intent = Intent(this, SettingPage::class.java)
-            startActivity(intent)
-
-        }
     }
 }
 
