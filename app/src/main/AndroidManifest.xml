@@ -15,7 +15,6 @@
         <activity
                 android:name="DiaryPage"
 
-                
                 android:exported="true">
             
             <intent-filter>

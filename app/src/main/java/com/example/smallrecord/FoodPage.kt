@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.widget.Button
 import android.widget.ImageButton
 
@@ -13,7 +14,10 @@ class FoodPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.food)
 
-
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
 
         val babyB = findViewById<ImageButton>(R.id.babyButton)
 

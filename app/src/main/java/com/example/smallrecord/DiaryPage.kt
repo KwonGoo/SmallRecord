@@ -1,19 +1,23 @@
 package com.example.smallrecord
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.media.Image
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.support.v7.app.ActionBar
+import android.support.v7.app.AppCompatActivity
 import android.widget.ImageButton
 
 class DiaryPage : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.diary)
+
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
 
         val foodB = findViewById<ImageButton>(R.id.foodButton)
 

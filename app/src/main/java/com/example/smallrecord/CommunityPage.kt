@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.Image
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ArrayAdapter
@@ -17,6 +18,11 @@ class CommunityPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community)
+
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
 
         val foodB = findViewById<ImageButton>(R.id.foodButton)
 
