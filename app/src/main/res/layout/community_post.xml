@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7fff3"
+        tools:context=".CommunityPost">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="70dp"
+                  android:layout_gravity="bottom"
+                  android:orientation="horizontal"
+                  android:gravity="center_vertical"
+                  android:background="#AFE0FE">
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/_1"
+                android:id="@+id/foodButton"
+                android:background="#eaffe0"
+                android:layout_weight="1"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/baby"
+                android:id="@+id/babyButton"
+                android:background="#eaffe0"
+                android:layout_weight="1"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/diary"
+                android:id="@+id/diaryButton"
+                android:background="#eaffe0"
+                android:layout_weight="1"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/community"
+                android:id="@+id/communityButton"
+                android:background="#f7fff3"
+                android:layout_weight="1"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/setting"
+                android:id="@+id/settingButton"
+                android:background="#eaffe0"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar"/>
+
+    <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="70dp"
+            android:padding="16dp"/>
+
+    <!-- 내용 표시 TextView -->
+
+    <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:layout_marginTop="110dp"
+            android:padding="16dp"/>
+    <Button
+            android:text="뒤로가기"
+            android:layout_width="93dp"
+            android:layout_height="51dp"
+            android:id="@+id/backButton"/>
+
+</FrameLayout>

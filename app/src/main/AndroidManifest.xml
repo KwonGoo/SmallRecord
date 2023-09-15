@@ -43,6 +43,11 @@
 
 
         </activity>
+        <activity android:name=".CommunityPost">
+
+
+        </activity>
+
         <activity
                 android:name="SettingPage">
 

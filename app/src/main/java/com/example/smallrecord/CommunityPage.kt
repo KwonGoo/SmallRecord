@@ -2,16 +2,19 @@ package com.example.smallrecord
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.media.Image
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.ActionBar
-import android.widget.Button
-import android.widget.ImageButton
+import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ListView
+import android.widget.TextView
 
 class CommunityPage : AppCompatActivity() {
+    private lateinit var listView: ListView
+    private lateinit var textViewTitle: TextView
+    private lateinit var textViewContent: TextView
 
 
     @SuppressLint("MissingInflatedId")
@@ -60,24 +63,27 @@ class CommunityPage : AppCompatActivity() {
         }
 
 
-        val listView = findViewById<ListView>(R.id.listView)
+        listView = findViewById(R.id.listView)
+        textViewTitle = findViewById(R.id.textViewTitle)
+        textViewContent = findViewById(R.id.textViewContent)
 
 
-        val itemList = listOf(
-            "게시물 1: 제목 1",
-            "게시물 2: 제목 2",
-            "게시물 3: 제목 3",
-            "게시물 4: 제목 4",
-            "게시물 5: 제목 5"
-        )
+        val itemList = arrayOf("게시글 1", "게시글 2", "게시글 3")
 
         // 어댑터 설정
-        val adapter = ArrayAdapter(this, R.layout.community, R.id.textViewTitle, itemList)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
         listView.adapter = adapter
 
 
         listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = itemList[position]
+            val selectedTitle = itemList[position]
+
+            val selectedContent = "게시글 ${position + 1}의 내용입니다."
+
+            val intent = Intent(this, CommunityPost::class.java)
+            intent.putExtra("title", selectedTitle)
+            intent.putExtra("content", selectedContent)
+            startActivity(intent)
         }
     }
 }
