@@ -66,9 +66,9 @@
                         android:text="🍚 이유식 목록"
                         android:textSize="28dp"
                         android:layout_height="50dp" android:id="@+id/textView" android:textStyle="bold"
-                        android:layout_width="361dp"/>
+                        android:layout_width="361dp" android:background="#8bcbc8" android:textColor="#3c2e3d"/>
                 <Button
-                        android:text="Button"
+                        android:text="🔍"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" android:id="@+id/button6"/>
             </LinearLayout>
@@ -82,11 +82,13 @@
                     android:text="⭐인기"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" android:id="@+id/textView2"/>
+                    android:layout_height="30dp" android:id="@+id/textView2" android:background="#ecc7c0"
+                    android:textColor="#3c2e3d"/>
             <ListView
 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" android:background="#f7fff3">
+            </ListView>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
@@ -96,21 +98,22 @@
                     android:text="⏲️최신"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" android:id="@+id/textView3"/>
+                    android:layout_height="30dp" android:id="@+id/textView3" android:background="#ecc7c0"
+                    android:textColor="#3c2e3d"/>
             <ListView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent" android:background="#f7fff3">
             </ListView>
         </LinearLayout>
     </LinearLayout>
     <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="844dp">
 
         <Button
-                android:text="Button"
+                android:text="추가"
                 android:layout_width="120dp"
-                android:layout_height="50dp" android:id="@+id/button5" android:translationY="790dp"
+                android:layout_height="50dp" android:id="@+id/button5" android:translationY="710dp"
                 android:translationX="280dp"/>
     </FrameLayout>
 
