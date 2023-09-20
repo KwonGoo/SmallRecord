@@ -63,7 +63,7 @@
     <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="768dp"
             android:layout_gravity="top"
             android:layout_marginTop="70dp"
             android:divider="@android:color/darker_gray"
@@ -74,20 +74,23 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:visibility="gone"/> <!-- 기본적으로 숨깁니다 -->
 
     <TextView
             android:id="@+id/textViewContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:textColor="#333" />
+            android:textColor="#333"
+            android:visibility="gone"/>
 
 
     <Button
-            android:text="Button"
+            android:text="글쓰기"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button3"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/writeButton"/>
 
 
 </FrameLayout>
