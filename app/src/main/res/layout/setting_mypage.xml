@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="2912px"
               android:orientation="vertical" android:background="#FFFFFF" android:gravity="center_horizontal">
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp" android:gravity="center_vertical" android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_height="210px" android:gravity="center_vertical" android:layout_marginTop="18px"
+            android:layout_marginBottom="18px">
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_revert"
-                android:id="@+id/imageButton"/>
+                android:id="@+id/turn_setting"/>
         <TextView
                 android:text="마이페이지"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView9" android:textSize="24sp"
-                android:textStyle="bold" android:textColor="#201722" android:layout_marginLeft="10dp"/>
+                android:textStyle="bold" android:textColor="#201722" android:layout_marginLeft="36px"/>
     </LinearLayout>
     <View
             android:id="@+id/divider4"
@@ -27,29 +27,163 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="200dp" android:layout_gravity="center_vertical" android:gravity="center_vertical">
+            android:layout_height="650px" android:layout_gravity="center_vertical" android:gravity="center_vertical">
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="270dp"
-                android:layout_height="match_parent" android:gravity="center_horizontal|center_vertical">
+                android:layout_width="950px"
+                android:layout_height="match_parent" android:gravity="center_horizontal|center_vertical"
+        >
             <TextView
-                    android:text="김응애 어린이"
+                    android:text="김응애"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/textView13" android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" android:textColor="#251C27"/>
             <TextView
                     android:text="126일동안 건강하게 자랐어요!"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView12" android:textSize="16sp"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView12" android:textSize="16sp"
+                    android:textColor="#443A47"/>
         </LinearLayout>
         <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
             <ImageView
-                    android:layout_width="110dp"
-                    android:layout_height="110dp" android:id="@+id/imageView2"
-                    app:srcCompat="@drawable/community"/>
+                    android:layout_width="380px"
+                    android:layout_height="380px" android:id="@+id/imageView2"
+                    android:background="@drawable/circle_background"
+                    app:srcCompat="@drawable/baby" android:translationX="45px" android:translationY="155px"/>
+            <ImageButton
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:layout_width="150px"
+                    android:layout_height="150px" android:id="@+id/imageButton2" android:translationX="280px"
+                    android:translationY="400px"/>
         </FrameLayout>
+    </LinearLayout>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+    />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="600px">
+        <TextView
+                android:text="아이 관리"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView14" android:textSize="18sp"
+                android:textColor="#261E27" android:paddingLeft="20px" android:paddingTop="10px"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="400px"
+                    android:layout_height="match_parent" android:gravity="center_horizontal|center_vertical">
+
+                <ImageView
+                        android:layout_width="300px"
+                        android:layout_height="300px" android:id="@+id/imageView2"
+                        android:background="@drawable/circle_background"
+                        app:srcCompat="@drawable/baby"/>
+                <TextView
+                        android:text="박응애"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView8" android:textSize="17sp"
+                        android:textStyle="bold" android:textColor="#2B202C"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="400px"
+                    android:layout_height="match_parent" android:gravity="center_horizontal|center_vertical">
+
+                <ImageView
+                        android:layout_width="300px"
+                        android:layout_height="300px" android:id="@+id/imageView2"
+                        app:srcCompat="@android:drawable/ic_menu_add"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="55px" android:background="#DCDCDC">
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+            <Button
+                    android:text="개인정보 관리"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                    android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                    android:background="#FFFFFF" android:stateListAnimator="@null"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+            <Button
+                    android:text="비밀번호 변경"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                    android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                    android:background="#FFFFFF" android:stateListAnimator="@null"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                    android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                    android:background="#FFFFFF" android:stateListAnimator="@null" android:text="개인정보 처리방침"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="55px" android:background="#DCDCDC">
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+            <Button
+                    android:text="회원 탈퇴"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                    android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                    android:background="#FFFFFF" android:stateListAnimator="@null"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0px" android:layout_weight="1" android:gravity="center_vertical">
+            <Button
+                    android:text="로그아웃"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                    android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                    android:background="#FFFFFF" android:stateListAnimator="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     </LinearLayout>
 </LinearLayout>

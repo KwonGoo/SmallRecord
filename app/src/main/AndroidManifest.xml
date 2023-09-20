@@ -70,6 +70,11 @@
                 android:name="Food_ReadyPage">
 
         </activity>
+        <activity
+                android:name=".Setting_MyPage">
+
+
+        </activity>
 
 
     </application>
