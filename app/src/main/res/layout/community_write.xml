@@ -60,38 +60,27 @@
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"/>
 
-    <ListView
-            android:id="@+id/listView"
+    <EditText
+            android:id="@+id/titleEditText"
             android:layout_width="match_parent"
-            android:layout_height="768dp"
-            android:layout_gravity="top"
-            android:layout_marginTop="70dp"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="1dp"/>
-    <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:visibility="gone"/> <!-- 기본적으로 숨깁니다 -->
-
-    <TextView
-            android:id="@+id/textViewContent"
-            android:layout_width="wrap_content"
+            android:hint="제목을 입력하세요"
+            android:layout_marginTop="100dp"
+            android:padding="16dp" android:translationY="-150px"/>
+    <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#333"
-            android:visibility="gone"/>
-
-
+            android:hint="내용을 입력하세요"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:padding="16dp" android:translationY="350px"/>
     <Button
-            android:text="글쓰기"
+            android:id="@+id/completeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/writeButton"/>
-
+            android:text="작성"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"/>
 
 </FrameLayout>
-
