@@ -48,6 +48,15 @@
 
 
         </activity>
+        <activity
+                android:name="Food_HomePage">
+
+        </activity>
+        <activity
+                android:name="Food_ReadyPage">
+
+        </activity>
+
 
     </application>
 
