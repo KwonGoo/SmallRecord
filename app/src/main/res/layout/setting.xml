@@ -10,15 +10,16 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="844dp" android:paddingBottom="0dp" android:id="@+id/setting">
+            android:layout_height="2642px" android:id="@+id/setting">
 
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/setting_scroll" android:fillViewport="true">
+                android:layout_height="wrap_content" android:id="@+id/setting_scroll" android:fillViewport="true"
+                android:layout_weight="0">
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp" android:background="#EAEAEA" android:layout_weight="1.1"
@@ -26,22 +27,22 @@
                     <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="300dp">
+                            android:layout_height="match_parent">
                         <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp" tools:srcCompat="@drawable/community"
-                                android:id="@+id/picture" android:layout_marginTop="50dp"/>
+                                android:layout_height="500px" tools:srcCompat="@drawable/baby"
+                                android:id="@+id/picture" android:layout_marginTop="180px"/>
                         <TextView
                                 android:text="김응애"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:id="@+id/textView" android:gravity="center"
-                                android:layout_marginTop="10dp" android:textSize="24sp" android:textStyle="bold"/>
+                                android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"/>
                         <TextView
                                 android:text="126일, 양육자 1명"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:id="@+id/textView2"
                                 android:gravity="center"
-                                android:textSize="18sp" android:layout_marginTop="5dp"/>
+                                android:textSize="18sp" android:layout_marginTop="18px"/>
                     </LinearLayout>
                 </FrameLayout>
                 <LinearLayout
@@ -52,13 +53,13 @@
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="5dp" android:layout_marginTop="20dp"
-                            android:layout_weight="1.1">
+                            android:layout_marginBottom="18px" android:layout_marginTop="70px"
+                            android:layout_weight="1">
                         <Button
                                 android:text="마이페이지"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/button7" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="24sp" android:textStyle="bold"
+                                android:layout_height="wrap_content" android:id="@+id/mypage" android:layout_weight="1"
+                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                                 android:gravity="left|center_vertical" android:paddingLeft="20dp"
                                 android:background="#FFFFFF" android:stateListAnimator="@null"/>
                     </LinearLayout>
@@ -66,14 +67,14 @@
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="1.2">
+                            android:layout_marginBottom="36px"
+                            android:layout_weight="1.1">
                         <TextView
                                 android:text="알림 수신 동의"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" android:id="@+id/textView6"
                                 android:layout_weight="1"
-                                android:textSize="24sp" android:textStyle="bold" android:textColor="#251D27"
+                                android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
                                 android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
                         <Switch
                                 android:layout_width="wrap_content"
@@ -85,32 +86,32 @@
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="20dp" android:layout_marginTop="15dp"
-                            android:layout_weight="1.1">
+                            android:layout_marginBottom="72px" android:layout_marginTop="54px"
+                            android:layout_weight="1">
                         <Button
                                 android:text="알림 세부 설정"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" android:id="@+id/button8" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="24sp" android:textStyle="bold"
+                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                                 android:gravity="left|center_vertical" android:paddingLeft="20dp"
                                 android:background="#FFFFFF" android:stateListAnimator="@null"/>
                     </LinearLayout>
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp" android:background="#CCCCCC">
+                            android:layout_height="198px" android:background="#CCCCCC">
                     </LinearLayout>
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="10dp" android:layout_marginTop="20dp"
-                            android:layout_weight="1.1">
+                            android:layout_marginBottom="36px" android:layout_marginTop="72px"
+                            android:layout_weight="1">
                         <Button
                                 android:text="연동 기기 설정"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" android:id="@+id/button9" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="24sp" android:textStyle="bold"
+                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                                 android:gravity="left|center_vertical" android:paddingLeft="20dp"
                                 android:background="#FFFFFF" android:stateListAnimator="@null"/>
                     </LinearLayout>
@@ -118,34 +119,35 @@
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="20dp" android:layout_marginTop="10dp"
-                            android:layout_weight="1.1">
+                            android:layout_marginBottom="72px" android:layout_marginTop="36px"
+                            android:layout_weight="1">
                         <Button
                                 android:text="문의하기"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" android:id="@+id/button10"
                                 android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="24sp" android:textStyle="bold"
+                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                                 android:gravity="left|center_vertical" android:paddingLeft="20dp"
                                 android:background="#FFFFFF" android:stateListAnimator="@null"/>
                     </LinearLayout>
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp" android:background="#CCCCCC">
+                            android:layout_height="198px" android:background="#CCCCCC">
                     </LinearLayout>
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_marginBottom="15dp"
-                            android:layout_weight="1.2">
+                            android:layout_marginBottom="54px"
+                            android:layout_weight="1.1"
+                    >
                         <TextView
                                 android:text="현재 버전 1.0"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:id="@+id/textView10"
                                 android:layout_weight="1"
-                                android:textSize="24sp" android:textStyle="bold" android:textColor="#251D27"
+                                android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
                                 android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
                         <TextView
                                 android:text="최신버전 입니다."
@@ -155,16 +157,11 @@
                                 android:layout_marginTop="15dp" android:layout_marginRight="15dp"/>
                     </LinearLayout>
                 </LinearLayout>
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp">
-
-                </FrameLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="70dp"
+                  android:layout_height="270px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
