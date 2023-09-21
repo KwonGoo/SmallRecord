@@ -1,6 +1,7 @@
 package com.example.smallrecord
 
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageButton
@@ -14,7 +15,10 @@ class CommunityPost : AppCompatActivity() {
         val titleTextView = findViewById<TextView>(R.id.titleTextView)
         val contentTextView = findViewById<TextView>(R.id.contentTextView)
         val backButton = findViewById<Button>(R.id.backButton)
-
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
         val intent = intent
         val title = intent.getStringExtra("title")
         val content = intent.getStringExtra("content")

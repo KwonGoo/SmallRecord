@@ -4,6 +4,7 @@ package com.example.smallrecord
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +15,11 @@ class CommunityWrite : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community_write)
+
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
 
         val titleEditText = findViewById<EditText>(R.id.titleEditText)
         val contentEditText = findViewById<EditText>(R.id.contentEditText)

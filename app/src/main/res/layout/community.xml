@@ -10,7 +10,7 @@
 
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="70dp"
+                  android:layout_height="280px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
@@ -60,32 +60,15 @@
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"/>
 
+
     <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="768dp"
-            android:layout_gravity="top"
-            android:layout_marginTop="70dp"
+            android:layout_height="2425px"
+            android:layout_marginTop="210px"
+            android:layout_gravity="center_horizontal"
             android:divider="@android:color/darker_gray"
-            android:dividerHeight="1dp"/>
-    <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:visibility="gone"/> <!-- 기본적으로 숨깁니다 -->
-
-    <TextView
-            android:id="@+id/textViewContent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#333"
-            android:visibility="gone"/>
-
-
+            android:dividerHeight="4px"/>
     <Button
             android:text="글쓰기"
             android:layout_width="wrap_content"
