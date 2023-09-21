@@ -135,8 +135,8 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_marginBottom="54px"
-                        android:layout_weight="1.6"
+                        android:layout_marginBottom="60px"
+                        android:layout_weight="1.5"
                 >
                     <TextView
                             android:text="현재 버전 1.0"
