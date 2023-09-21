@@ -12,153 +12,148 @@
             android:layout_width="match_parent"
             android:layout_height="2642px" android:id="@+id/setting">
 
-        <ScrollView
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/setting_scroll" android:fillViewport="true"
-                android:layout_weight="0">
-            <LinearLayout
-                    android:orientation="vertical"
+                android:layout_height="match_parent">
+            <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp" android:background="#EAEAEA" android:layout_weight="1.1"
-                        android:id="@+id/profile">
-                    <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="500px" tools:srcCompat="@drawable/baby"
-                                android:id="@+id/picture" android:layout_marginTop="180px"/>
-                        <TextView
-                                android:text="김응애"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/textView" android:gravity="center"
-                                android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"/>
-                        <TextView
-                                android:text="126일, 양육자 1명"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/textView2"
-                                android:gravity="center"
-                                android:textSize="18sp" android:layout_marginTop="18px"/>
-                    </LinearLayout>
-                </FrameLayout>
+                    android:layout_height="0dp" android:background="#EAEAEA" android:layout_weight="1.1"
+                    android:id="@+id/profile">
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp" android:layout_weight="2" android:id="@+id/btn_list">
-                    <LinearLayout
-                            android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                    <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="18px" android:layout_marginTop="70px"
-                            android:layout_weight="1">
-                        <Button
-                                android:text="마이페이지"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/mypage" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
-                                android:gravity="left|center_vertical" android:paddingLeft="20dp"
-                                android:background="#FFFFFF" android:stateListAnimator="@null"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
+                            android:layout_height="400px" tools:srcCompat="@drawable/baby"
+                            android:id="@+id/picture" android:layout_marginTop="180px"/>
+                    <TextView
+                            android:text="김응애"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="36px"
-                            android:layout_weight="1.1">
-                        <TextView
-                                android:text="알림 수신 동의"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/textView6"
-                                android:layout_weight="1"
-                                android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
-                                android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
-                        <Switch
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent" android:id="@+id/ASwitch"
-                                android:layout_marginTop="11dp" android:layout_marginRight="25dp" android:scaleX="1.2"
-                                android:scaleY="1.2"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" android:id="@+id/textView" android:gravity="center"
+                            android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"/>
+                    <TextView
+                            android:text="126일, 양육자 1명"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="72px" android:layout_marginTop="54px"
-                            android:layout_weight="1">
-                        <Button
-                                android:text="알림 세부 설정"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/button8" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
-                                android:gravity="left|center_vertical" android:paddingLeft="20dp"
-                                android:background="#FFFFFF" android:stateListAnimator="@null"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" android:id="@+id/textView2"
+                            android:gravity="center"
+                            android:textSize="18sp" android:layout_marginTop="18px"/>
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" android:layout_weight="2" android:id="@+id/btn_list">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="18px" android:layout_marginTop="70px"
+                        android:layout_weight="1">
+                    <Button
+                            android:text="마이페이지"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/mypage" android:layout_weight="1"
+                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                            android:background="#FFFFFF" android:stateListAnimator="@null"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="20px"
+                        android:layout_weight="1.5">
+                    <TextView
+                            android:text="알림 수신 동의"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView6"
+                            android:layout_weight="1"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
+                            android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
+                    <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/ASwitch"
+                            android:layout_marginTop="11dp" android:layout_marginRight="25dp" android:scaleX="1.2"
+                            android:scaleY="1.2"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="72px" android:layout_marginTop="54px"
+                        android:layout_weight="1">
+                    <Button
+                            android:text="알림 세부 설정"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/button8" android:layout_weight="1"
+                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                            android:background="#FFFFFF" android:stateListAnimator="@null"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150px" android:background="#CCCCCC">
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="30px" android:layout_marginTop="65px"
+                        android:layout_weight="1">
+                    <Button
+                            android:text="연동 기기 설정"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/button9" android:layout_weight="1"
+                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                            android:background="#FFFFFF" android:stateListAnimator="@null"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="65px" android:layout_marginTop="30px"
+                        android:layout_weight="1">
+                    <Button
+                            android:text="문의하기"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/button10"
+                            android:layout_weight="1"
+                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:gravity="left|center_vertical" android:paddingLeft="20dp"
+                            android:background="#FFFFFF" android:stateListAnimator="@null"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150px" android:background="#CCCCCC">
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="54px"
+                        android:layout_weight="1.6"
+                >
+                    <TextView
+                            android:text="현재 버전 1.0"
                             android:layout_width="match_parent"
-                            android:layout_height="198px" android:background="#CCCCCC">
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="36px" android:layout_marginTop="72px"
-                            android:layout_weight="1">
-                        <Button
-                                android:text="연동 기기 설정"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/button9" android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
-                                android:gravity="left|center_vertical" android:paddingLeft="20dp"
-                                android:background="#FFFFFF" android:stateListAnimator="@null"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="72px" android:layout_marginTop="36px"
-                            android:layout_weight="1">
-                        <Button
-                                android:text="문의하기"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/button10"
-                                android:layout_weight="1"
-                                android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
-                                android:gravity="left|center_vertical" android:paddingLeft="20dp"
-                                android:background="#FFFFFF" android:stateListAnimator="@null"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="198px" android:background="#CCCCCC">
-                    </LinearLayout>
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginBottom="54px"
-                            android:layout_weight="1.1"
-                    >
-                        <TextView
-                                android:text="현재 버전 1.0"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/textView10"
-                                android:layout_weight="1"
-                                android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
-                                android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
-                        <TextView
-                                android:text="최신버전 입니다."
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/textView11"
-                                android:textSize="18sp"
-                                android:layout_marginTop="15dp" android:layout_marginRight="15dp"/>
-                    </LinearLayout>
+                            android:layout_height="wrap_content" android:id="@+id/textView10"
+                            android:layout_weight="1"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
+                            android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
+                    <TextView
+                            android:text="최신버전 입니다."
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView11"
+                            android:textSize="18sp"
+                            android:layout_marginTop="15dp" android:layout_marginRight="15dp"/>
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="270px"
