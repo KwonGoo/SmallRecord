@@ -9,7 +9,7 @@
         tools:context=".CommunityPost">
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="70dp"
+                  android:layout_height="280px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
@@ -66,8 +66,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#000"
-            android:layout_marginTop="70dp"
-            android:padding="16dp"/>
+            android:layout_marginTop="200px"
+            android:padding="64px"/>
 
     <!-- 내용 표시 TextView -->
 
@@ -77,12 +77,13 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="#333"
-            android:layout_marginTop="110dp"
-            android:padding="16dp"/>
+            android:layout_marginTop="410px"
+            android:padding="64px"/>
     <Button
             android:text="뒤로가기"
-            android:layout_width="93dp"
-            android:layout_height="51dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/backButton"/>
+
 
 </FrameLayout>

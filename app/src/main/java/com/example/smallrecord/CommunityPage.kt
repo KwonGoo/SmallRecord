@@ -25,6 +25,11 @@ class CommunityPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community)
 
+        val actionBar: ActionBar? = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
+
         // 글쓰기버튼
         val writeButton = findViewById<Button>(R.id.writeButton)
         writeButton.setOnClickListener {

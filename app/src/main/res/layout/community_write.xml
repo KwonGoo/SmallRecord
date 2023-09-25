@@ -10,7 +10,7 @@
 
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="70dp"
+                  android:layout_height="280px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
@@ -65,22 +65,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="제목을 입력하세요"
-            android:layout_marginTop="100dp"
-            android:padding="16dp" android:translationY="-150px"/>
+            android:layout_marginTop="350px"
+            android:padding="64px" android:translationY="-150px"/>
     <EditText
             android:id="@+id/contentEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="내용을 입력하세요"
             android:layout_gravity="start"
-            android:layout_marginTop="16dp"
-            android:padding="16dp" android:translationY="350px"/>
+            android:layout_marginTop="64px"
+            android:padding="64px"
+            android:translationY="350px"/>
     <Button
             android:id="@+id/completeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="작성"
             android:layout_gravity="end"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="64px"/>
 
 </FrameLayout>
