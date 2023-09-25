@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 
 class BabyPage : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -50,5 +51,7 @@ class BabyPage : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
+
     }
 }

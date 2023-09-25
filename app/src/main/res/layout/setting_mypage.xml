@@ -50,7 +50,7 @@
 
             <ImageView
                     android:layout_width="380px"
-                    android:layout_height="380px" android:id="@+id/imageView2"
+                    android:layout_height="380px" android:id="@+id/imageView22"
                     android:background="@drawable/circle_background"
                     app:srcCompat="@drawable/baby" android:translationX="45px" android:translationY="155px"/>
             <ImageButton
@@ -86,7 +86,7 @@
 
                 <ImageView
                         android:layout_width="300px"
-                        android:layout_height="300px" android:id="@+id/imageView2"
+                        android:layout_height="300px" android:id="@+id/imageView23"
                         android:background="@drawable/circle_background"
                         app:srcCompat="@drawable/baby"/>
                 <TextView
@@ -102,7 +102,7 @@
 
                 <ImageView
                         android:layout_width="300px"
-                        android:layout_height="300px" android:id="@+id/imageView2"
+                        android:layout_height="300px" android:id="@+id/imageView24"
                         app:srcCompat="@android:drawable/ic_menu_add"/>
             </LinearLayout>
         </LinearLayout>
@@ -123,7 +123,7 @@
             <Button
                     android:text="개인정보 관리"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/button9" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -135,7 +135,7 @@
             <Button
                     android:text="비밀번호 변경"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/button8" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -146,7 +146,7 @@
                 android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
             <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/button10" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null" android:text="개인정보 처리방침"/>
@@ -163,7 +163,7 @@
             <Button
                     android:text="회원 탈퇴"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/button11" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -175,7 +175,7 @@
             <Button
                     android:text="로그아웃"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/button12" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>

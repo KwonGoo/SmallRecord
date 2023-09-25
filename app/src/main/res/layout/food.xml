@@ -38,6 +38,7 @@
                 android:layout_height="1365px" android:visibility="visible" android:background="#00FFFFFF">
 
             <TextView
+
                     android:textSize="20sp"
                     android:layout_width="match_parent"
                     android:layout_height="120px" android:id="@+id/textView2" android:background="#ecc7c0"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="250px" app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="848dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/diaryItem">
+    <TextView
+            android:text="20 : 02 AM"
+            android:layout_width="0px"
+            android:gravity="center"
+            android:layout_height="match_parent" android:id="@+id/diaryItemTime" android:layout_weight="3.5"/>
+    <ImageView
+            android:layout_width="0px"
+            android:layout_height="match_parent" app:srcCompat="@drawable/baby" android:id="@+id/diaryItemImage"
+            android:layout_weight="2"/>
+    <TextView
+            android:text="이유식"
+            android:layout_width="0px"
+            android:gravity="center"
+            android:layout_height="match_parent" android:id="@+id/diaryItemName" android:layout_weight="9"/>
+    <ImageView
+            android:layout_width="0px"
+            android:layout_height="match_parent" app:srcCompat="@drawable/baseline_arrow_forward_ios_24"
+            android:id="@+id/diaryItemButton" android:layout_weight="2"/>
+
+
+</LinearLayout>
+
+
