@@ -10,8 +10,8 @@ import com.android.volley.toolbox.StringRequest
 import java.lang.reflect.Method
 
 class Setting_LoginRequest(
-    private val UserName: String,
-    private val UserPwd: String,
+    userName: String,
+    userPwd: String,
     listener: Response.Listener<String>
 ) : StringRequest(Method.POST, URL, listener, null) {
 
@@ -24,8 +24,8 @@ class Setting_LoginRequest(
 
     init {
         map = mapOf(
-            "userName" to UserName,
-            "userPassword" to UserPwd
+            "userName" to userName,
+            "userPassword" to userPwd
         )
     }
 

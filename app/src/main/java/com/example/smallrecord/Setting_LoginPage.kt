@@ -37,7 +37,7 @@ class Setting_LoginPage : AppCompatActivity() {
         loginId = findViewById(R.id.login_id)
         loginPassword = findViewById(R.id.login_password)
 
-        joinButton = findViewById(R.id.join_button)
+        joinButton = findViewById(R.id.join_page)
         joinButton.setOnClickListener {
             val intent = Intent(this@Setting_LoginPage, Setting_RegisterPage::class.java)
             startActivity(intent)

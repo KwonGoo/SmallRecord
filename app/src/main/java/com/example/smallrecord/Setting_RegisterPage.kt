@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -78,7 +79,13 @@ class Setting_RegisterPage : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-            val validateRequest = Setting_VaildateRequest(userName, responseListener)
+
+            // 서버 연결 실패 시 다이얼로그 표시
+            val errorListener = Response.ErrorListener { error ->
+                Log.e("VolleyError", "서버 연결 실패", error)
+            }
+
+            val validateRequest = Setting_VaildateRequest(userName, responseListener, errorListener)
             val queue = Volley.newRequestQueue(this@Setting_RegisterPage)
             queue.add(validateRequest)
         }

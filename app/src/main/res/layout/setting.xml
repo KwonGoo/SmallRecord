@@ -66,7 +66,7 @@
                             android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                             android:gravity="left|center_vertical" android:paddingLeft="20dp"
                             android:background="#FFFFFF" android:stateListAnimator="@null"
-                            android:visibility="invisible"/>
+                            android:visibility="gone"/>
                 </FrameLayout>
                 <LinearLayout
                         android:orientation="horizontal"

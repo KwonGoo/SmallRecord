@@ -26,7 +26,7 @@
             <Button
                     android:text="중복확인"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/check_button"/>
+                    android:layout_height="wrap_content" android:id="@+id/check_button" android:background="#FA6F6F"/>
         </LinearLayout>
         <EditText
                 android:layout_width="1000px"
