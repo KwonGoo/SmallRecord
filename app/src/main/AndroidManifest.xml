@@ -72,9 +72,14 @@
         </activity>
         <activity
                 android:name=".Setting_MyPage">
-
-
         </activity>
+        <activity
+                android:name=".Setting_LoginPage">
+        </activity>
+        <activity
+                android:name=".Setting_RegisterPage">
+        </activity>
+
 
 
     </application>

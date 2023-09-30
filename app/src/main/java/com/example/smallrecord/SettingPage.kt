@@ -64,6 +64,14 @@ class SettingPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
+        val LoginPage = findViewById<Button>(R.id.loginpage)
+
+        LoginPage.setOnClickListener {
+            val intent = Intent(this, Setting_LoginPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
         val ASwitch = findViewById<Switch>(R.id.ASwitch)
 
         // SharedPreferences를 초기화

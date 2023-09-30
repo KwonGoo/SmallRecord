@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
               android:layout_height="2912px"
-              android:orientation="vertical" android:background="#FFFFFF" android:gravity="center_horizontal">
+              android:orientation="vertical" android:background="#FFFFFF" android:gravity="center_horizontal"
+              android:id="@+id/myback">
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="210px" android:gravity="center_vertical" android:layout_marginTop="18px"
-            android:layout_marginBottom="18px">
+            android:layout_marginBottom="18px" android:id="@+id/backsetting">
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_revert"
@@ -27,7 +28,8 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="650px" android:layout_gravity="center_vertical" android:gravity="center_vertical">
+            android:layout_height="650px" android:layout_gravity="center_vertical" android:gravity="center_vertical"
+            android:id="@+id/selectbaby">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="950px"
@@ -69,7 +71,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="600px">
+            android:layout_height="600px" android:id="@+id/babylist">
         <TextView
                 android:text="아이 관리"
                 android:layout_width="match_parent"
@@ -115,7 +117,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" android:id="@+id/mypagelist">
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -123,7 +125,7 @@
             <Button
                     android:text="개인정보 관리"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button9" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/linkpage" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -135,7 +137,7 @@
             <Button
                     android:text="비밀번호 변경"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button8" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/alrampage" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -146,7 +148,7 @@
                 android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
             <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button10" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/comment" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null" android:text="개인정보 처리방침"/>
