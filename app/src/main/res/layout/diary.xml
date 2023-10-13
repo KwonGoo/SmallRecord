@@ -60,7 +60,7 @@
                 android:background="#ffffff"
                 android:layout_width="0px"
                 android:layout_height="230px" app:srcCompat="@drawable/baseline_doorbell_24"
-                android:id="@+id/imageButton2" android:layout_weight="1"/>
+                android:id="@+id/alamButton" android:layout_weight="1"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="0px"
@@ -68,20 +68,20 @@
             <TextView
                     android:text="김응애"
                     android:layout_width="match_parent"
-                    android:layout_height="0px" android:id="@+id/textView8" android:layout_weight="1"
+                    android:layout_height="0px" android:id="@+id/nameView" android:layout_weight="1"
                      android:textAllCaps="false"
                     android:gravity="center"/>
             <TextView
                     android:text="2개월 16일 (D+77)"
                     android:layout_width="match_parent"
-                    android:layout_height="0px" android:id="@+id/textView14" android:layout_weight="1"
+                    android:layout_height="0px" android:id="@+id/ageView" android:layout_weight="1"
                     android:gravity="center"/>
         </LinearLayout>
         <ImageButton
                 android:background="#ffffff"
                 android:layout_width="0px"
                 android:layout_height="230px"
-                android:id="@+id/imageButton3" android:layout_weight="1"
+                android:id="@+id/otherBabyButton" android:layout_weight="1"
                 android:src="@drawable/baby"/>
     </LinearLayout>
     <LinearLayout
@@ -92,18 +92,18 @@
                 android:background="#ffffff"
                 android:layout_width="0px"
                 android:layout_height="match_parent" app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"
-                android:id="@+id/imageButton4" android:layout_weight="2"/>
+                android:id="@+id/dayBackButton" android:layout_weight="2"/>
         <TextView
                 android:text="2023년 9월 12일 (화, 오늘)"
                 android:layout_width="0px"
-                android:layout_height="match_parent" android:id="@+id/textView15" android:layout_weight="7"
+                android:layout_height="match_parent" android:id="@+id/dayView" android:layout_weight="7"
                 android:gravity="center" android:clickable="false" android:textAllCaps="false"
         />
         <ImageButton
                 android:background="#ffffff"
                 android:src="@drawable/baseline_arrow_forward_ios_24"
                 android:layout_width="0px"
-                android:layout_height="match_parent" android:id="@+id/imageButton5" android:layout_weight="2"/>
+                android:layout_height="match_parent" android:id="@+id/dayFrontButton" android:layout_weight="2"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"

@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f7fff3"
+        android:background="#ffffff"
         tools:context=".BabyPage">
 
 
@@ -19,35 +19,35 @@
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/_1"
                 android:id="@+id/foodButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/baby"
                 android:id="@+id/babyButton"
-                android:background="#f7fff3"
+                android:background="#ffffff"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/diary"
                 android:id="@+id/diaryButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/community"
                 android:id="@+id/communityButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/setting"
                 android:id="@+id/settingButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
     </LinearLayout>
 
@@ -65,13 +65,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="660.5px">
                 <TextView
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:layout_width="0px"
                         android:layout_height="660.5px" android:id="@+id/shitTime" android:layout_weight="1"
                         android:text="응애가 똥싼지\n4시간 00분\n지났어요!" android:textAlignment="center"
                         android:textSize="25sp" android:drawablePadding="10dp"/>
                 <TextView
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="응애가 밥먹은지\n4시 30분\n지났어요!"
                         android:layout_width="0px"
                         android:layout_height="661px" android:id="@+id/foodTime" android:layout_weight="1"
@@ -82,13 +82,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <TextView
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="응애가 일어난지\n10시간 30분\n지났어요!"
                         android:layout_width="0px"
                         android:layout_height="660.5px" android:id="@+id/wakeTime"
                         android:textSize="25sp" android:textAlignment="center" android:layout_weight="1"/>
                 <TextView
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="+"
                         android:layout_width="0px"
                         android:layout_height="match_parent" android:id="@+id/plusTime" android:layout_weight="1"
@@ -102,28 +102,28 @@
                 android:layout_height="1321px" android:translationY="1321px">
             <ImageView
                     android:layout_width="110.7px"
-                    android:layout_height="1230px" android:id="@+id/imageView3"
+                    android:layout_height="1230px" android:id="@+id/bar1"
                     android:translationY="92px" android:translationX="110.7px" android:background="#FF0000"/>
             <ImageView
                     android:layout_width="110.7px"
                     android:layout_height="1230px"
-                    android:id="@+id/progressBar2" android:translationX="221.4px" android:translationY="92px"
+                    android:id="@+id/bar2" android:translationX="221.4px" android:translationY="92px"
                     android:background="#FF5722"/>
             <ImageView
                     android:layout_height="1230px"
-                    android:id="@+id/progressBar4" android:translationX="332.4px" android:translationY="92px"
+                    android:id="@+id/bar3" android:translationX="332.4px" android:translationY="92px"
                     android:layout_width="110.7px" android:background="#FFEB3B"/>
             <ImageView
                     android:layout_height="1230px"
-                    android:id="@+id/progressBar5" android:translationX="443.1px" android:translationY="92px"
+                    android:id="@+id/bar4" android:translationX="443.1px" android:translationY="92px"
                     android:layout_width="110.7px" android:background="#8BC34A"/>
             <ImageView
                     android:layout_height="1230px"
-                    android:id="@+id/progressBar6" android:translationX="553.8px" android:translationY="92px"
+                    android:id="@+id/bar5" android:translationX="553.8px" android:translationY="92px"
                     android:layout_width="110.7px" android:background="#2196F3"/>
             <ImageView
                     android:layout_height="1230px"
-                    android:id="@+id/progressBar7" android:translationX="664.5px" android:translationY="92px"
+                    android:id="@+id/bar6" android:translationX="664.5px" android:translationY="92px"
                     android:layout_width="110.7px" android:background="#9C27B0"/>
         </LinearLayout>
     </FrameLayout>

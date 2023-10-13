@@ -3,8 +3,8 @@ package com.example.smallrecord
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 
 class Food_ReadyPage :AppCompatActivity(){
@@ -24,6 +24,12 @@ class Food_ReadyPage :AppCompatActivity(){
             val intent = Intent(this,FoodPage::class.java)
             startActivity(intent)
             overridePendingTransition(0,0)
+        }
+
+        val madeButton = findViewById<Button>(R.id.madeButton)
+        madeButton.setOnClickListener{
+            var intent = Intent(this,BarcodeCameraPage::class.java)
+            startActivity(intent)
         }
     }
 }
