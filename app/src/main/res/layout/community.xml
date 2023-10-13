@@ -5,12 +5,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f7fff3"
+        android:background="#ffffff"
         tools:context=".CommunityPage">
 
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="280px"
+                  android:layout_height="270px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
@@ -20,42 +20,42 @@
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/_1"
                 android:id="@+id/foodButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/baby"
                 android:id="@+id/babyButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/diary"
                 android:id="@+id/diaryButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/community"
                 android:id="@+id/communityButton"
-                android:background="#f7fff3"
+                android:background="#ffffff"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/setting"
                 android:id="@+id/settingButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
     </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#FDAE84"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"/>

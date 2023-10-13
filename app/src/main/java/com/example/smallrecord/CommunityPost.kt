@@ -6,8 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.*
 
 class CommunityPost : AppCompatActivity() {
+    private lateinit var titleTextView: TextView
+    private lateinit var contentTextView: TextView
+    private lateinit var backButton: Button
+    private lateinit var editText: EditText
+    private lateinit var listView: ListView
+    private lateinit var commentList: MutableList<String>
+    private lateinit var adapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community_post) // CommunityPost 액티비티의 레이아웃 파일 설정
@@ -15,6 +24,9 @@ class CommunityPost : AppCompatActivity() {
         val titleTextView = findViewById<TextView>(R.id.titleTextView)
         val contentTextView = findViewById<TextView>(R.id.contentTextView)
         val backButton = findViewById<Button>(R.id.backButton)
+        editText = findViewById(R.id.editTextText) //댓글입력
+        listView = findViewById(R.id.listView) //댓글용 리스트뷰
+
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
@@ -28,6 +40,24 @@ class CommunityPost : AppCompatActivity() {
 
         backButton.setOnClickListener {
             finish()
+        }
+        // 댓글 목록 초기화
+        commentList = ArrayList()
+
+        // 어댑터 설정
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, commentList)
+        listView.adapter = adapter
+
+        // "댓글 입력" 버튼 클릭 이벤트 처리
+        val commentButton = findViewById<Button>(R.id.commentButton)
+        commentButton.setOnClickListener {
+            val comment = editText.text.toString()
+            if (comment.isNotEmpty()) {
+                // 댓글 목록에 추가
+                commentList.add(comment)
+                adapter.notifyDataSetChanged()
+                editText.text.clear() // 입력한 내용 지우기
+            }
         }
     }
 }
