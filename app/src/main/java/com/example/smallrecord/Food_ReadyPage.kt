@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -33,7 +34,7 @@ class Food_ReadyPage :AppCompatActivity(){
             overridePendingTransition(0,0)
         }
 
-        val madeButton = findViewById<Button>(R.id.madeButton)
+        val madeButton = findViewById<Button>(R.id.readymadepicB)
         madeButton.setOnClickListener{
             var intent = Intent(this,BarcodeCameraPage::class.java)
             startActivity(intent)
