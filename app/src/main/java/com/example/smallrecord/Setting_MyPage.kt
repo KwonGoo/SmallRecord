@@ -27,5 +27,13 @@ class Setting_MyPage : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
+        val appPreferences = AppPreferences(applicationContext)
+        val Logout = findViewById<Button>(R.id.logout)
+        Logout.setOnClickListener{
+            appPreferences.clearUserCredentials()
+            val intent = Intent(this, SettingPage::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Switch
+import android.widget.TextView
 
 class SettingPage : AppCompatActivity() {
 
@@ -64,6 +65,14 @@ class SettingPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
+        val LoginPage = findViewById<Button>(R.id.loginpage)
+
+        LoginPage.setOnClickListener {
+            val intent = Intent(this, Setting_LoginPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
         val ASwitch = findViewById<Switch>(R.id.ASwitch)
 
         // SharedPreferences를 초기화
@@ -80,6 +89,20 @@ class SettingPage : AppCompatActivity() {
             editor.apply()
         }
 
+        val appPreferences = AppPreferences(applicationContext)
+        if (appPreferences.isLoggedIn()) {
+            // 로그인된 상태
+            val user = appPreferences.getUserName()
+            val textText = findViewById<TextView>(R.id.babyname)
+            textText.text = "$user"
+
+            LoginPage.visibility = View.GONE;
+            MyPage.visibility = View.VISIBLE;
+        } else {
+            // 로그아웃된 상태
+            LoginPage.visibility = View.VISIBLE;
+            MyPage.visibility = View.GONE;
+        }
 
     }
 }
