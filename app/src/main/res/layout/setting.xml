@@ -18,7 +18,7 @@
                 android:layout_height="match_parent" android:id="@+id/settingbar">
             <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp" android:background="#EAEAEA" android:layout_weight="1.1"
+                    android:layout_height="0dp" android:background="#D9E8E3" android:layout_weight="1.1"
                     android:id="@+id/profile">
                 <LinearLayout
                         android:orientation="vertical"
@@ -29,7 +29,7 @@
                             android:layout_height="400px" tools:srcCompat="@drawable/baby"
                             android:id="@+id/picture" android:layout_marginTop="180px"/>
                     <TextView
-                            android:text="김응애"
+                            android:text="게스트"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/babyname" android:gravity="center"
                             android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"/>
@@ -104,7 +104,7 @@
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="150px" android:background="#CCCCCC" android:id="@+id/gongback1">
+                        android:layout_height="150px" android:background="#DAE9E4" android:id="@+id/gongback1">
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -138,7 +138,7 @@
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="150px" android:background="#CCCCCC" android:id="@+id/gongback2">
+                        android:layout_height="150px" android:background="#DAE9E4" android:id="@+id/gongback2">
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -175,35 +175,35 @@
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/_1"
                 android:id="@+id/foodButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/baby"
                 android:id="@+id/babyButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/diary"
                 android:id="@+id/diaryButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/community"
                 android:id="@+id/communityButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/setting"
                 android:id="@+id/settingButton"
-                android:background="#f7fff3"
+                android:background="#FFFFFF"
                 android:layout_weight="1"/>
     </LinearLayout>
 

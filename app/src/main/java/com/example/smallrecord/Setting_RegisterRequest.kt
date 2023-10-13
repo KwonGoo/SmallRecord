@@ -5,9 +5,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 
 class Setting_RegisterRequest (
+    userName: String,
     userEmail: String,
     userPwd: String,
-    userName: String,
     listener: Response.Listener<String>
 ) : StringRequest(Request.Method.POST, URL, listener, null) {
 
@@ -21,8 +21,8 @@ class Setting_RegisterRequest (
     init {
         map = mapOf(
             "userEmail" to userEmail,
-            "userPassword" to userPwd,
-            "userName" to userName
+            "userName" to userName,
+            "userPassword" to userPwd
         )
     }
 

@@ -19,7 +19,7 @@
                     android:textSize="28sp" android:textColor="#3c2e3d"/>
             <TextView
                     android:layout_width="0px"
-                    android:layout_height="180px" android:id="@+id/textView8" android:textSize="28sp"
+                    android:layout_height="180px" android:id="@+id/subName" android:textSize="28sp"
                     android:layout_weight="1" android:text="수제 이유식 추가" android:rotationX="0" android:rotationY="0"
                     android:textColor="#3c2e3d" android:translationX="0px" android:translationY="0px"/>
         </LinearLayout>

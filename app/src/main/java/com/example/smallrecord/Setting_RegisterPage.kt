@@ -52,7 +52,7 @@ class Setting_RegisterPage : AppCompatActivity() {
 
             if (userName.isEmpty()) {
                 val builder = AlertDialog.Builder(this@Setting_RegisterPage)
-                dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create()
+                dialog = builder.setMessage("닉네임을 입력하세요.").setPositiveButton("확인", null).create()
                 dialog?.show()
                 return@setOnClickListener
             }
@@ -65,14 +65,14 @@ class Setting_RegisterPage : AppCompatActivity() {
 
                     if (success) {
                         val builder = AlertDialog.Builder(this@Setting_RegisterPage)
-                        dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create()
+                        dialog = builder.setMessage("사용할 수 있는 닉네임입니다.").setPositiveButton("확인", null).create()
                         dialog?.show()
                         joinName.isEnabled = false // 아이디값 고정
                         validate = true // 검증 완료
                         checkButton.setBackgroundColor(colorGray)
                     } else {
                         val builder = AlertDialog.Builder(this@Setting_RegisterPage)
-                        dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create()
+                        dialog = builder.setMessage("이미 존재하는 닉네임입니다.").setNegativeButton("확인", null).create()
                         dialog?.show()
                     }
                 } catch (e: JSONException) {
@@ -80,12 +80,7 @@ class Setting_RegisterPage : AppCompatActivity() {
                 }
             }
 
-            // 서버 연결 실패 시 다이얼로그 표시
-            val errorListener = Response.ErrorListener { error ->
-                Log.e("VolleyError", "서버 연결 실패", error)
-            }
-
-            val validateRequest = Setting_VaildateRequest(userName, responseListener, errorListener)
+            val validateRequest = Setting_VaildateRequest(userName, responseListener)
             val queue = Volley.newRequestQueue(this@Setting_RegisterPage)
             queue.add(validateRequest)
         }
@@ -97,18 +92,26 @@ class Setting_RegisterPage : AppCompatActivity() {
             val userName = joinName.text.toString()
             val passCk = joinPwck.text.toString()
 
-            // 아이디 중복체크 했는지 확인
+            // 이름 중복체크 했는지 확인
             if (!validate) {
                 val builder = AlertDialog.Builder(this@Setting_RegisterPage)
-                dialog = builder.setMessage("중복된 아이디가 있는지 확인하세요.").setNegativeButton("확인", null).create()
+                dialog = builder.setMessage("중복된 닉네임이 있는지 확인하세요.").setNegativeButton("확인", null).create()
                 dialog?.show()
                 return@setOnClickListener
             }
 
             // 한 칸이라도 입력 안했을 경우
-            if (userEmail.isEmpty() || userPwd.isEmpty() || userName.isEmpty()) {
+            if (userName.isEmpty() || userEmail.isEmpty() || userPwd.isEmpty() || passCk.isEmpty()) {
                 val builder = AlertDialog.Builder(this@Setting_RegisterPage)
                 dialog = builder.setMessage("모두 입력해주세요.").setNegativeButton("확인", null).create()
+                dialog?.show()
+                return@setOnClickListener
+            }
+
+            // 비밀번호와 비밀번호확인이 일치하는지 확인
+            if (userPwd != passCk) {
+                val builder = AlertDialog.Builder(this@Setting_RegisterPage)
+                dialog = builder.setMessage("비밀번호가 일치하지 않습니다.").setNegativeButton("확인", null).create()
                 dialog?.show()
                 return@setOnClickListener
             }
@@ -118,29 +121,20 @@ class Setting_RegisterPage : AppCompatActivity() {
                     val jsonObject = JSONObject(response)
                     val success = jsonObject.getBoolean("success")
 
-                    // 회원가입 성공시
-                    if (userPwd == passCk) {
-                        if (success) {
-                            Toast.makeText(
-                                applicationContext,
-                                "${userName}님 가입을 환영합니다.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            val intent = Intent(this@Setting_RegisterPage, Setting_LoginPage::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(
-                                applicationContext,
-                                "회원가입에 실패하였습니다.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            return@Listener
-                        }
+                    if (success) {
+                        Toast.makeText(
+                            applicationContext,
+                            "${userName}님 가입을 환영합니다.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        val intent = Intent(this@Setting_RegisterPage, Setting_LoginPage::class.java)
+                        startActivity(intent)
                     } else {
-                        val builder = AlertDialog.Builder(this@Setting_RegisterPage)
-                        dialog = builder.setMessage("비밀번호가 동일하지 않습니다.").setNegativeButton("확인", null).create()
-                        dialog?.show()
-                        return@Listener
+                        Toast.makeText(
+                            applicationContext,
+                            "회원가입에 실패하였습니다.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
@@ -148,7 +142,7 @@ class Setting_RegisterPage : AppCompatActivity() {
             }
 
             // 서버로 Volley를 이용해서 요청
-            val registerRequest = Setting_RegisterRequest(userEmail, userPwd, userName, responseListener)
+            val registerRequest = Setting_RegisterRequest(userName, userEmail, userPwd, responseListener)
             val queue = Volley.newRequestQueue(this@Setting_RegisterPage)
             queue.add(registerRequest)
         }

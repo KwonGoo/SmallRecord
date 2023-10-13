@@ -29,12 +29,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/login_button"
                     android:layout_marginRight="250px" android:textColor="#FFFFFF" android:textSize="16sp"
-                    android:background="#EF6D6D" android:textStyle="bold"/>
+                    android:background="#FDAE84" android:textStyle="bold"/>
             <Button
                     android:text="회원가입"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/join_page" android:textColor="#FFFFFF"
-                    android:textSize="16sp" android:background="#EF6D6D" android:textStyle="bold"/>
+                    android:textSize="16sp" android:background="#FDAE84" android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

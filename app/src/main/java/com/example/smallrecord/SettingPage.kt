@@ -6,10 +6,13 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.UserManager
 import android.support.v7.app.ActionBar
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Switch
+import android.widget.TextView
 
 class SettingPage : AppCompatActivity() {
 
@@ -88,6 +91,20 @@ class SettingPage : AppCompatActivity() {
             editor.apply()
         }
 
+        val appPreferences = AppPreferences(applicationContext)
+        if (appPreferences.isLoggedIn()) {
+            // 로그인된 상태
+            val user = appPreferences.getUserName()
+            val textText = findViewById<TextView>(R.id.babyname)
+            textText.text = "$user"
+
+            LoginPage.visibility = View.GONE;
+            MyPage.visibility = View.VISIBLE;
+        } else {
+            // 로그아웃된 상태
+            LoginPage.visibility = View.VISIBLE;
+            MyPage.visibility = View.GONE;
+        }
 
     }
 }

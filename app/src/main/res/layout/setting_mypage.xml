@@ -38,7 +38,7 @@
             <TextView
                     android:text="김응애"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView13" android:textSize="24sp"
+                    android:layout_height="wrap_content" android:id="@+id/mainName" android:textSize="24sp"
                     android:textStyle="bold" android:textColor="#251C27"/>
             <TextView
                     android:text="126일동안 건강하게 자랐어요!"
@@ -52,13 +52,13 @@
 
             <ImageView
                     android:layout_width="380px"
-                    android:layout_height="380px" android:id="@+id/imageView22"
+                    android:layout_height="380px" android:id="@+id/PF"
                     android:background="@drawable/circle_background"
                     app:srcCompat="@drawable/baby" android:translationX="45px" android:translationY="155px"/>
             <ImageButton
                     android:src="@android:drawable/ic_menu_camera"
                     android:layout_width="150px"
-                    android:layout_height="150px" android:id="@+id/imageButton2" android:translationX="280px"
+                    android:layout_height="150px" android:id="@+id/PFcamera" android:translationX="280px"
                     android:translationY="400px"/>
         </FrameLayout>
     </LinearLayout>
@@ -88,13 +88,13 @@
 
                 <ImageView
                         android:layout_width="300px"
-                        android:layout_height="300px" android:id="@+id/imageView23"
+                        android:layout_height="300px" android:id="@+id/subPF"
                         android:background="@drawable/circle_background"
                         app:srcCompat="@drawable/baby"/>
                 <TextView
                         android:text="박응애"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/textView8" android:textSize="17sp"
+                        android:layout_height="wrap_content" android:id="@+id/subName" android:textSize="17sp"
                         android:textStyle="bold" android:textColor="#2B202C"/>
             </LinearLayout>
             <LinearLayout
@@ -104,7 +104,7 @@
 
                 <ImageView
                         android:layout_width="300px"
-                        android:layout_height="300px" android:id="@+id/imageView24"
+                        android:layout_height="300px" android:id="@+id/babyplus"
                         app:srcCompat="@android:drawable/ic_menu_add"/>
             </LinearLayout>
         </LinearLayout>
@@ -112,7 +112,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="55px" android:background="#DCDCDC">
+            android:layout_height="55px" android:background="#DAE9E4">
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"
@@ -156,7 +156,7 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="55px" android:background="#DCDCDC">
+                android:layout_height="55px" android:background="#DAE9E4">
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -165,7 +165,7 @@
             <Button
                     android:text="회원 탈퇴"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button11" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/withdraw" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>
@@ -177,7 +177,7 @@
             <Button
                     android:text="로그아웃"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button12" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/logout" android:layout_weight="1"
                     android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
                     android:gravity="left|center_vertical" android:paddingLeft="20dp"
                     android:background="#FFFFFF" android:stateListAnimator="@null"/>

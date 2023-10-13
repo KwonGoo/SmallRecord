@@ -26,7 +26,8 @@
             <Button
                     android:text="중복확인"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/check_button" android:background="#FA6F6F"/>
+                    android:layout_height="wrap_content" android:id="@+id/check_button" android:background="#FDAE84"
+                    android:textColor="#FFFFFF"/>
         </LinearLayout>
         <EditText
                 android:layout_width="1000px"
@@ -54,14 +55,15 @@
             <Button
                     android:text="가입"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/join_button" android:layout_marginRight="350px"
-                    android:textColor="#FFFFFF" android:background="#FB6F6F" android:textSize="16sp"
+                    android:layout_height="wrap_content" android:id="@+id/join_button"
+                    android:layout_marginRight="350px"
+                    android:textColor="#FFFFFF" android:background="#FDAE84" android:textSize="16sp"
                     android:textStyle="bold"/>
             <Button
                     android:text="취소"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/delete" android:textColor="#FFFFFF"
-                    android:background="#FB6F6F" android:textSize="16sp" android:textStyle="bold"/>
+                    android:background="#FDAE84" android:textSize="16sp" android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
