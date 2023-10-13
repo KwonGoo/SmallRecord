@@ -5,56 +5,56 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f7fff3"
+        android:background="#ffffff"
         tools:context=".CommunityPost">
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="280px"
+                  android:layout_height="270px"
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
-                  android:background="#AFE0FE">
+                  android:background="#FDAE84">
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/_1"
                 android:id="@+id/foodButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/baby"
                 android:id="@+id/babyButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/diary"
                 android:id="@+id/diaryButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/community"
                 android:id="@+id/communityButton"
-                android:background="#f7fff3"
+                android:background="#ffffff"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/setting"
                 android:id="@+id/settingButton"
-                android:background="#eaffe0"
+                android:background="#FDAE84"
                 android:layout_weight="1"/>
     </LinearLayout>
 
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#FDAE84"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"/>
@@ -69,7 +69,6 @@
             android:layout_marginTop="200px"
             android:padding="64px"/>
 
-    <!-- 내용 표시 TextView -->
 
     <TextView
             android:id="@+id/contentTextView"
@@ -84,6 +83,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/backButton"/>
+    <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="900px"
+            android:layout_below="@id/contentTextView"
+            android:translationY="1542px"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:inputType="text"
+            android:text="댓글 입력"
+            android:ems="10"
+            android:layout_below="@id/listView"
+            android:id="@+id/editTextText"
+            android:translationY="2442px"/>
+    <Button
+            android:id="@+id/commentButton"
+            android:text="댓글 입력"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="1100px"
+            android:translationY="1342px"/>
 
 
 </FrameLayout>

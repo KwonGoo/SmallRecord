@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import com.example.smallrecord.R
 
 class CommunityWrite : AppCompatActivity() {
@@ -16,9 +17,49 @@ class CommunityWrite : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community_write)
 
+        val foodB = findViewById<ImageButton>(R.id.foodButton)
+
+        foodB.setOnClickListener {
+            val intent = Intent(this, FoodPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
+        val babyB = findViewById<ImageButton>(R.id.babyButton)
+
+        babyB.setOnClickListener {
+            val intent = Intent(this, BabyPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
+        val diaryB = findViewById<ImageButton>(R.id.diaryButton)
+
+        diaryB.setOnClickListener {
+            val intent = Intent(this, DiaryPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
+
+        val settingB = findViewById<ImageButton>(R.id.settingButton)
+
+        settingB.setOnClickListener {
+            val intent = Intent(this, SettingPage::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+
+        }
+
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
+        }
+
+        val backButton = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener {
+            val intent = Intent(this, CommunityPage::class.java)
+            startActivity(intent)
         }
 
         val titleEditText = findViewById<EditText>(R.id.titleEditText)

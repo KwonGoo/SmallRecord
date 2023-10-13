@@ -79,6 +79,18 @@ class CommunityPage : AppCompatActivity() {
         // 어댑터 설정
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
         listView.adapter = adapter
+
+        // 리스트뷰 항목 클릭 이벤트 처리
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedTitle = itemList[position] // 선택된 게시글 제목 가져오기
+            val selectedContent = "게시글 내용" // 게시글 내용을 가져와야함
+
+            // 게시글 정보를 CommunityPost 액티비티로 전달하는 인텐트 생성
+            val intent = Intent(this, CommunityPost::class.java)
+            intent.putExtra("title", selectedTitle)
+            intent.putExtra("content", selectedContent)
+            startActivity(intent)
+        }
     }
 
         // onActivityResult 함수를 CommunityPage 클래스 내부에 추가
@@ -98,4 +110,5 @@ class CommunityPage : AppCompatActivity() {
             }
         }
     }
+
 
