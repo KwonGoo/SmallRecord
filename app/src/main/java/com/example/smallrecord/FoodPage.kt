@@ -2,9 +2,10 @@ package com.example.smallrecord
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.ActionBar
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -51,6 +52,12 @@ class FoodPage : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
 
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = android.graphics.Color.parseColor("#8bcbc8") // #RRGGBB는 16진수 색상 코드입니다.
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
 
         val foodPlusB = findViewById<Button>(R.id.food_plusButton)

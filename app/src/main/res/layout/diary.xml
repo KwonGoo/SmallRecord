@@ -68,8 +68,8 @@
             <TextView
                     android:text="김응애"
                     android:layout_width="match_parent"
-                    android:layout_height="0px" android:id="@+id/textView8" android:layout_weight="1"
-                     android:textAllCaps="false"
+                    android:layout_height="0px" android:id="@+id/textView" android:layout_weight="1"
+                    android:textAllCaps="false"
                     android:gravity="center"/>
             <TextView
                     android:text="2개월 16일 (D+77)"
