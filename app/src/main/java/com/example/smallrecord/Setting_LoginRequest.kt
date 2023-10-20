@@ -2,8 +2,8 @@ package com.example.smallrecord
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
