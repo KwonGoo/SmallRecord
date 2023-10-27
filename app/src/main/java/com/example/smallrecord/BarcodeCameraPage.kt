@@ -139,6 +139,7 @@ class BarcodeCameraPage : AppCompatActivity() {
         dialog.setCancelable(false)
     }
 
+
     override fun onResume() {
         super.onResume()
         barcodeScanner!!.resume()

@@ -39,5 +39,6 @@ class Food_ReadyPage :AppCompatActivity(){
             var intent = Intent(this,BarcodeCameraPage::class.java)
             startActivity(intent)
         }
+
     }
 }
