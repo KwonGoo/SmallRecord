@@ -1,6 +1,5 @@
 package com.example.smallrecord
 
-
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -19,7 +18,6 @@ class CommunityPage : AppCompatActivity() {
     private lateinit var itemList: MutableList<String>
     private lateinit var adapter: ArrayAdapter<String>
 
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +34,7 @@ class CommunityPage : AppCompatActivity() {
             // CommunityWrite 액티비티로 이동
             val intent = Intent(this, CommunityWrite::class.java)
             startActivityForResult(intent, WRITE_REQUEST_CODE)
+            overridePendingTransition(0, 0)
         }
 
         val foodB = findViewById<ImageButton>(R.id.foodButton)
@@ -62,16 +61,13 @@ class CommunityPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
-
         val settingB = findViewById<ImageButton>(R.id.settingButton)
 
         settingB.setOnClickListener {
             val intent = Intent(this, SettingPage::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
-
         }
-
 
         listView = findViewById(R.id.listView)
         itemList = mutableListOf("게시글 1", "게시글 2", "게시글 3")
@@ -84,31 +80,27 @@ class CommunityPage : AppCompatActivity() {
         listView.setOnItemClickListener { _, _, position, _ ->
             val selectedTitle = itemList[position] // 선택된 게시글 제목 가져오기
             val selectedContent = "게시글 내용" // 게시글 내용을 가져와야함
-
-            // 게시글 정보를 CommunityPost 액티비티로 전달하는 인텐트 생성
             val intent = Intent(this, CommunityPost::class.java)
             intent.putExtra("title", selectedTitle)
             intent.putExtra("content", selectedContent)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
-        // onActivityResult 함수를 CommunityPage 클래스 내부에 추가
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            super.onActivityResult(requestCode, resultCode, data)
+    // onActivityResult 함수를 CommunityPage 클래스 내부에 추가
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-            if (requestCode == WRITE_REQUEST_CODE && resultCode == RESULT_OK) {
-                // 작성한 글의 데이터 가져오기
-                val title = data?.getStringExtra("title")
-                val content = data?.getStringExtra("content")
+        if (requestCode == WRITE_REQUEST_CODE && resultCode == RESULT_OK) {
+            val title = data?.getStringExtra("title")
+            val content = data?.getStringExtra("content")
 
-                // 가져온 데이터를 사용하여 게시글 목록에 추가하는 작업 수행
-                if (title != null) {
-                    itemList.add(title)
-                    adapter.notifyDataSetChanged() // 리스트 갱신
-                }
+            if (title != null) {
+                itemList.add(title)
+                adapter.notifyDataSetChanged()
             }
+            overridePendingTransition(0, 0)
         }
     }
-
-
+}

@@ -43,7 +43,8 @@
 
 
         </activity>
-        <activity android:name=".CommunityPost">
+        <activity android:name=".CommunityPost"
+            android:windowSoftInputMode="adjustPan">
 
 
         </activity>
