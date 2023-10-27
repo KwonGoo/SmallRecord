@@ -1,6 +1,5 @@
 package com.example.smallrecord
 
-
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -41,14 +40,12 @@ class CommunityWrite : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
-
         val settingB = findViewById<ImageButton>(R.id.settingButton)
 
         settingB.setOnClickListener {
             val intent = Intent(this, SettingPage::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
-
         }
 
         val actionBar: ActionBar? = supportActionBar
@@ -60,6 +57,7 @@ class CommunityWrite : AppCompatActivity() {
         backButton.setOnClickListener {
             val intent = Intent(this, CommunityPage::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
         val titleEditText = findViewById<EditText>(R.id.titleEditText)
@@ -77,6 +75,7 @@ class CommunityWrite : AppCompatActivity() {
             intent.putExtra("content", content)
             setResult(RESULT_OK, intent)
             finish()
+            overridePendingTransition(0, 0)
         }
     }
 }

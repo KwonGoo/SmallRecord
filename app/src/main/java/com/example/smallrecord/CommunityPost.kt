@@ -40,6 +40,7 @@ class CommunityPost : AppCompatActivity() {
 
         backButton.setOnClickListener {
             finish()
+            overridePendingTransition(0, 0)
         }
         // 댓글 목록 초기화
         commentList = ArrayList()
@@ -52,6 +53,7 @@ class CommunityPost : AppCompatActivity() {
         val commentButton = findViewById<Button>(R.id.commentButton)
         commentButton.setOnClickListener {
             val comment = editText.text.toString()
+            overridePendingTransition(0, 0)
             if (comment.isNotEmpty()) {
                 // 댓글 목록에 추가
                 commentList.add(comment)
