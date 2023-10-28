@@ -61,7 +61,7 @@
                     android:textColor="#3c2e3d"/>
             <ListView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:background="#ffffff">
+                    android:layout_height="match_parent" android:background="#ffffff" android:id="@+id/myFoodListV">
             </ListView>
         </LinearLayout>
     </LinearLayout>
