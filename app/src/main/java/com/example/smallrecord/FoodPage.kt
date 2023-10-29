@@ -1,16 +1,24 @@
 package com.example.smallrecord
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
 
 class FoodPage : AppCompatActivity() {
+    private lateinit var myList: MutableList<String>
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var adapter: ArrayAdapter<String>
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,6 +101,54 @@ class FoodPage : AppCompatActivity() {
             homemadeB.visibility = View.GONE
             readyMadeB.visibility = View.GONE
         }
+
+        val foodMylistV = findViewById<ListView>(R.id.myFoodListV)
+
+        // myList와 sharedPreferences 초기화
+        myList = mutableListOf()
+        sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+
+        // SharedPreferences에서 저장된 목록 로드
+        myList.addAll(sharedPreferences.getStringSet("myList", emptySet()) ?: emptySet())
+
+        adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myList)
+        foodMylistV.adapter = adapter
+
+        // 리스트뷰에서 항목을 롱클릭하여 삭제
+        foodMylistV.setOnItemLongClickListener { _, _, position, _ ->
+            val itemToRemove = myList[position]
+            showDeleteDialog(itemToRemove)
+            true
+        }
+
+        if (intent.hasExtra("productName")) {
+            val productName = intent.getStringExtra("productName")
+            if (productName != null) {
+                myList.add(productName)
+                updateMyListInSharedPreferences()
+                adapter.notifyDataSetChanged()
+            }
+        }
+    }
+    // 항목을 삭제하는 컨텍스트 메뉴 보여주기
+    private fun showDeleteDialog(itemToRemove: String) {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("삭제")
+        alertDialog.setMessage("이 항목을 삭제하시겠습니까?")
+        alertDialog.setPositiveButton("예") { _, _ ->
+            // 항목 삭제
+            myList.remove(itemToRemove)
+            updateMyListInSharedPreferences()
+            adapter.notifyDataSetChanged()
+        }
+        alertDialog.setNegativeButton("아니요") { dialog, _ -> dialog.dismiss() }
+        alertDialog.show()
+    }
+
+    // myList를 업데이트하고 SharedPreferences에 저장
+    private fun updateMyListInSharedPreferences() {
+        val editor = sharedPreferences.edit()
+        editor.putStringSet("myList", myList.toSet())
+        editor.apply()
     }
 }
-

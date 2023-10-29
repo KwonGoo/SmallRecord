@@ -6,7 +6,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" android:id="@+id/rdmainL">
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -15,13 +15,18 @@
                     android:text="뒤"
                     android:layout_width="0px"
                     android:id="@+id/BackFoodButton"
-                    android:layout_height="wrap_content" android:layout_weight="0.15"
+                    android:layout_height="wrap_content" android:layout_weight="0.20"
                     android:textSize="28sp" android:textColor="#3c2e3d"/>
             <TextView
                     android:layout_width="0px"
                     android:layout_height="180px" android:id="@+id/readymadeHeadtxetV" android:textSize="28sp"
                     android:layout_weight="1" android:text="기성 이유식 추가" android:rotationX="0" android:rotationY="0"
                     android:textColor="#3c2e3d" android:translationX="0px" android:translationY="0px"/>
+            <Button
+                    android:text="저장"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:id="@+id/readyeditB" android:layout_weight="0.001"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
@@ -30,6 +35,7 @@
             <SearchView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/readymadeSearch"/>
+
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -46,10 +52,19 @@
                     android:layout_height="300px" android:id="@+id/readymadepicB" android:layout_weight="1"
                     android:translationY="100px"/>
         </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/readyInfo"
+                    tools:text="제품명 :\n제조사 :\n탄수화물 :\n단백질 :\n지방 :\n나트륨 :\n콜레스테롤 :\n당류 :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        </LinearLayout>
     </LinearLayout>
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-    </FrameLayout>
+    <ListView
+            android:layout_width="match_parent" android:visibility="gone"
+            android:layout_height="wrap_content" android:id="@+id/searchingListV" android:translationY="400px"
+            android:background="#BCBCBC"/>
 </FrameLayout>
