@@ -44,7 +44,7 @@ class BarcodeCameraPage : AppCompatActivity() {
                     return
                 }
 
-                Toast.makeText(context, result.text, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "이유식이 추가 되었습니다. ("+result.text+")", Toast.LENGTH_SHORT).show()
                 lastText = result.text
                                 
                 finish()
@@ -107,37 +107,12 @@ class BarcodeCameraPage : AppCompatActivity() {
                 listPermissionsNeeded.add(permission)
             }
         }
-        if (!listPermissionsNeeded.isEmpty()) {
-            showPermissionInfoDialog(listPermissionsNeeded)
-            return false
-        }
 
 
 
         return true
     }
 
-    private fun showPermissionInfoDialog(listPermissionsNeeded: List<String>) {
-        val dialog = AlertDialog.Builder(this).create()
-        val layoutInflater = LayoutInflater.from(this)
-        val promptView = layoutInflater.inflate(R.layout.dialog_permission, null)
-        val alertDialogButton: TextView = promptView.findViewById(R.id.alertdialog_button)
-
-        alertDialogButton.setOnClickListener {
-            dialog.cancel()
-
-
-            ActivityCompat.requestPermissions(
-                this,
-                listPermissionsNeeded.toTypedArray(),
-                PERMISSION_MULTI_CODE
-            )
-        }
-        dialog.setView(promptView)
-        dialog.show()
-        dialog.setCanceledOnTouchOutside(false)
-        dialog.setCancelable(false)
-    }
 
 
     override fun onResume() {

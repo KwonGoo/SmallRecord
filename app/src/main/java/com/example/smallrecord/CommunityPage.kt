@@ -2,6 +2,7 @@ package com.example.smallrecord
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,14 @@ class CommunityPage : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = android.graphics.Color.parseColor("#FDAE84") // #RRGGBB는 16진수 색상 코드입니다.
         }
 
         // 글쓰기버튼

@@ -13,42 +13,45 @@
                   android:layout_gravity="bottom"
                   android:orientation="horizontal"
                   android:gravity="center_vertical"
-                  android:background="#AFE0FE" android:translationZ="1px">
+                  android:background="#FDAE84" android:translationZ="1px">
+
         <ImageButton
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/_1"
+                app:srcCompat="@drawable/foodbutton_x"
                 android:id="@+id/foodButton"
                 android:background="#FDAE84"
-                android:layout_weight="1"/>
+                android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter"
+                android:padding="70px"/>
         <ImageButton
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/baby"
+                app:srcCompat="@drawable/babybutton_x"
                 android:id="@+id/babyButton"
-                android:background="#ffffff"
-                android:layout_weight="1"/>
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/diary"
-                android:id="@+id/diaryButton"
                 android:background="#FDAE84"
-                android:layout_weight="1"/>
+                android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter"
+                android:padding="70px"/>
         <ImageButton
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/community"
+                app:srcCompat="@drawable/diarybutton_o"
+                android:id="@+id/diaryButton"
+                android:background="#ffffff"
+                android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter" android:padding="70px" />
+        <ImageButton
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/communitybutton_x"
                 android:id="@+id/communityButton"
                 android:background="#FDAE84"
-                android:layout_weight="1"/>
+                android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter" android:padding="70px"/>
         <ImageButton
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/setting"
+                app:srcCompat="@drawable/settingbutton_x"
                 android:id="@+id/settingButton"
                 android:background="#FDAE84"
-                android:layout_weight="1"/>
+                android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter" android:padding="70px"/>
     </LinearLayout>
 
     <FrameLayout

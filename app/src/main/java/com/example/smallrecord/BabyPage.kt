@@ -2,9 +2,11 @@ package com.example.smallrecord
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import android.widget.Button
 import android.widget.ImageButton
@@ -25,6 +27,14 @@ class BabyPage : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = android.graphics.Color.parseColor("#ffffff") // #RRGGBB는 16진수 색상 코드입니다.
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
 
 
@@ -80,7 +90,7 @@ class BabyPage : AppCompatActivity() {
                 }
                 shitTime.text = babyName + "가 똥싼지\n" + shitHour + "시간 " + shitMin + "분\n지났어요!!"
                 shitMin++
-                handler.postDelayed(this,600)
+                handler.postDelayed(this,60000)
             }
         }
 
@@ -108,7 +118,7 @@ class BabyPage : AppCompatActivity() {
                 }
                 foodTime.text = babyName + "가 밥먹은지\n" + foodHour + "시간 " + foodMin + "분\n지났어요!!"
                 foodMin++
-                handler.postDelayed(this,600)
+                handler.postDelayed(this,60000)
             }
         }
 
@@ -135,7 +145,7 @@ class BabyPage : AppCompatActivity() {
                 }
                 wakeTime.text = babyName + "가 일어난지\n" + wakeHour + "시간 " + wakeMin + "분\n지났어요!!"
                 wakeMin++
-                handler.postDelayed(this,600)
+                handler.postDelayed(this,60000)
             }
         }
 
@@ -147,6 +157,32 @@ class BabyPage : AppCompatActivity() {
         }
 
 
+        var plusHour = 0
+        var plusMin = 0
+        val plusTime = findViewById<TextView>(R.id.plusTime)
+
+        val plusCounter = object : Runnable {
+            override fun run() {
+
+
+
+                if (plusMin == 60)
+                {
+                    plusHour ++
+                    plusMin = 0
+                }
+                plusTime.text = babyName + "가 +++\n" + plusHour + "시간 " + plusMin + "분\n지났어요!!"
+                plusMin++
+                handler.postDelayed(this,60000)
+            }
+        }
+
+        plusTime.setOnClickListener{
+           plusHour = 0
+           plusMin = 0
+            plusTime.text = babyName + "가 +++\n" + "0시간 " + "0분\n지났어요!!"
+            handler.post(plusCounter)
+        }
 
 
 
