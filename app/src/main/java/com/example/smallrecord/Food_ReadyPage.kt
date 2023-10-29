@@ -18,7 +18,14 @@ class Food_ReadyPage :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.readymade)
 
+        val barCodePage = BarcodeCameraPage()
+        var barCodeNum = ""
         val actionBar: ActionBar? = supportActionBar
+
+        fun getBarcodeNum(barcodeCameraPage: BarcodeCameraPage): String{
+            val barcodeNumData = barcodeCameraPage.lastText
+            return barcodeNumData
+        }
 
         if (actionBar != null) {
             actionBar.hide()
@@ -37,11 +44,16 @@ class Food_ReadyPage :AppCompatActivity(){
             overridePendingTransition(0,0)
         }
 
+
         val madeButton = findViewById<Button>(R.id.readymadepicB)
         madeButton.setOnClickListener{
             var intent = Intent(this,BarcodeCameraPage::class.java)
             startActivity(intent)
+
         }
+
+
+
 
         data class FoodInfo(val name: String, val description: String, val Carbohydrates: String, val Protein: String, val Fat: String, val Sodium: String, val Cholesterol: String, val Sugar: String)
         val readysearchingV = findViewById<SearchView>(R.id.readymadeSearch)
@@ -154,5 +166,9 @@ class Food_ReadyPage :AppCompatActivity(){
 
             startActivity(intent)
         }
+
+
     }
+
+
 }

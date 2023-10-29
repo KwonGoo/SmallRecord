@@ -25,7 +25,7 @@ import java.util.*
 
 class BarcodeCameraPage : AppCompatActivity() {
     private var beepManager: BeepManager? = null
-    private var lastText: String? = null
+    var lastText: String = ""
     private lateinit var context: Context
     private var CAMERA_REQUEST_CODE = 2
     private val PERMISSION_MULTI_CODE = 100
@@ -46,7 +46,7 @@ class BarcodeCameraPage : AppCompatActivity() {
 
                 Toast.makeText(context, "이유식이 추가 되었습니다. ("+result.text+")", Toast.LENGTH_SHORT).show()
                 lastText = result.text
-                                
+
                 finish()
             }
         }

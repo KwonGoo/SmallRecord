@@ -75,9 +75,9 @@
         <ImageButton
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/foodbutton_x"
+                app:srcCompat="@drawable/foodbutton_o"
                 android:id="@+id/foodButton"
-                android:background="#FDAE84"
+                android:background="#ffffff"
                 android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter"
                 android:padding="70px"/>
         <ImageButton
@@ -91,9 +91,9 @@
         <ImageButton
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/diarybutton_o"
+                app:srcCompat="@drawable/diarybutton_x"
                 android:id="@+id/diaryButton"
-                android:background="#ffffff"
+                android:background="#FDAE84"
                 android:layout_weight="1" android:contentDescription="@string/app_name" android:scaleType="fitCenter" android:padding="70px" />
         <ImageButton
                 android:layout_width="0px"
