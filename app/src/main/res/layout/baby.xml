@@ -56,7 +56,7 @@
 
     <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="2642px">
+            android:layout_height="2635px">
 
 
         <LinearLayout
@@ -67,37 +67,58 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="660.5px">
-                <TextView
-                        android:clickable="true"
-                        android:text="응애가 똥을 싸면\n눌러주세요!"
-                        android:gravity="center"
+                <FrameLayout
                         android:layout_width="0px"
-                        android:layout_height="660.5px" android:id="@+id/shitTime" android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textSize="25sp" android:drawablePadding="10dp"/>
-                <TextView
-                        android:gravity="center"
-                        android:text="응애가 밥먹으면\n눌러주세요!"
-                        android:layout_width="0px"
-                        android:layout_height="661px" android:id="@+id/foodTime" android:layout_weight="1"
-                        android:textSize="25sp" android:textAlignment="center"/>
+                        android:layout_height="660.5px"
+                        android:layout_weight="1">
+
+                    <TextView
+                            android:clickable="true"
+                            android:text="응애가 똥을 싸면\n눌러주세요!"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:id="@+id/shitTime"
+                            android:textAlignment="center"
+                            android:textSize="25sp" android:drawablePadding="10dp"/>
+                </FrameLayout>
+                <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="660.5px" android:layout_weight="1">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="응애가 밥먹으면\n눌러주세요!"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:id="@+id/foodTime" android:layout_weight="1"
+                            android:textSize="25sp" android:textAlignment="center"/>
+                </FrameLayout>
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <TextView
-                        android:gravity="center"
-                        android:text="응애가 일어나면 \n눌러주세요!"
-                        android:layout_width="0px"
-                        android:layout_height="660.5px" android:id="@+id/wakeTime"
-                        android:textSize="25sp" android:textAlignment="center" android:layout_weight="1"/>
-                <TextView
-                        android:gravity="center"
-                        android:text="+"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent" android:id="@+id/plusTime" android:layout_weight="1"
-                        android:textSize="25sp" android:textAlignment="center"/>
+                <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="660.5px" android:layout_weight="1">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="응애가 일어나면 \n눌러주세요!"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:id="@+id/wakeTime"
+                            android:textSize="25sp" android:textAlignment="center" android:layout_weight="1"/>
+                </FrameLayout>
+                <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="660.5px" android:layout_weight="1">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="+"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:id="@+id/plusTime" android:layout_weight="1"
+                            android:textSize="25sp" android:textAlignment="center"/>
+                </FrameLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout

@@ -22,10 +22,10 @@ class Food_ReadyPage :AppCompatActivity(){
         var barCodeNum = ""
         val actionBar: ActionBar? = supportActionBar
 
-        fun getBarcodeNum(barcodeCameraPage: BarcodeCameraPage): String{
+       /* fun getBarcodeNum(barcodeCameraPage: BarcodeCameraPage): String{
             val barcodeNumData = barcodeCameraPage.lastText
             return barcodeNumData
-        }
+        }*/
 
         if (actionBar != null) {
             actionBar.hide()

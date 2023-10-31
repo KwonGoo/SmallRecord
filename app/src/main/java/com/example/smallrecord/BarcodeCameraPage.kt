@@ -25,7 +25,7 @@ import java.util.*
 
 class BarcodeCameraPage : AppCompatActivity() {
     private var beepManager: BeepManager? = null
-    var lastText: String = ""
+    var lastText: String? = null
     private lateinit var context: Context
     private var CAMERA_REQUEST_CODE = 2
     private val PERMISSION_MULTI_CODE = 100

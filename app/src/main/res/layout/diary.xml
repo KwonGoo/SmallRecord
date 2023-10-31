@@ -109,7 +109,7 @@
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2212px" android:translationY="430px">
+            android:layout_height="2037px" android:translationY="430px">
         <ListView
                 android:id="@+id/diaryList"
                 android:layout_width="match_parent"
@@ -117,6 +117,27 @@
                 tools:listitem="@layout/diaryitem"
         />
     </LinearLayout>
+    <LinearLayout
+            android:background="#DAE9E4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="170px" android:translationY="2465px">
+        <TextView
+                android:layout_width="1260px"
+                android:layout_height="wrap_content" android:id="@+id/doCount"/>
+        <Button
+                android:layout_width="180px"
+                android:layout_height="wrap_content" android:id="@+id/doButton"
+                android:background="@drawable/baseline_check_24"/>
+    </LinearLayout>
+    <ListView
+            android:id="@+id/doList"
+            android:background="#DAE9E4"
+            android:layout_width="1000px"
+            android:layout_height="1000px"
+            android:translationX="220px"
+            android:translationY="1000px"
+            android:visibility="gone" />
 
 
 </FrameLayout>
