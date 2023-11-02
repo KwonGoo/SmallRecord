@@ -72,7 +72,7 @@
 
         </activity>
         <activity
-                android:name="Food_ReadyPage">
+                android:name=".foodreadypage.Food_ReadyPage">
 
         </activity>
         <activity

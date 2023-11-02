@@ -18,11 +18,7 @@ import com.example.smallrecord.FoodPage
 import com.example.smallrecord.R
 import com.example.smallrecord.entity.FoodEntity
 import com.example.smallrecord.entity.FoodEntitySampleData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 class Food_ReadyPage : AppCompatActivity() {
 
@@ -40,7 +36,7 @@ class Food_ReadyPage : AppCompatActivity() {
 
         fun getBarcodeNum(barcodeCameraPage: BarcodeCameraPage): String {
             val barcodeNumData = barcodeCameraPage.lastText
-            return barcodeNumData
+            return barcodeNumData!!
         }
 
         if (actionBar != null) {
