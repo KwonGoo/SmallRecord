@@ -72,20 +72,24 @@
 <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>-->
 <!--        </LinearLayout>-->
         <ListView
-                android:layout_width="match_parent" android:visibility="gone"
+                android:layout_width="match_parent" android:visibility="visible"
                 android:layout_height="wrap_content"
-                android:id="@+id/searchingListAAV" android:translationY="400px"
-                android:background="#BCBCBC"/>
+                android:id="@+id/foodInfoList"
+                android:background="#FFFFFF"/>
 
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/foodNameSearchedRecyclerView"
-            android:visibility="gone"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="400dp"
-            android:background="#BCBCBC"
+            android:layout_marginTop="400px">
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foodNameSearchedRecyclerView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BCBCBC"
         />
+    </LinearLayout>
 
 </FrameLayout>

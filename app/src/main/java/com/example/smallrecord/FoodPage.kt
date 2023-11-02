@@ -6,14 +6,15 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ListView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.example.smallrecord.foodreadypage.Food_ReadyPage
 
 class FoodPage : AppCompatActivity() {
     private lateinit var myList: MutableList<String>
@@ -86,7 +87,7 @@ class FoodPage : AppCompatActivity() {
             readyMadeB.visibility = View.GONE
         }
         readyMadeB.setOnClickListener {
-            val intent = Intent(this,Food_ReadyPage::class.java)
+            val intent = Intent(this, Food_ReadyPage::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
             foodPlusB.visibility = View.VISIBLE

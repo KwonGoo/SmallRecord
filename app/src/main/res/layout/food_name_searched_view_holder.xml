@@ -10,21 +10,12 @@
         >
 
     <TextView
-            android:text=" 🍚 "
-            android:textSize="30sp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:background="#8bcbc8"
-            android:textColor="#3c2e3d"/>
-
-    <TextView
             android:id="@+id/foodNameSearchedProductName"
             tools:text="검색된 음식 이름이 표현됨 예) 단호박"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:background="#8bcbc8"
+            android:background="#DCDCDC"
             android:textColor="#3c2e3d"/>
 
 </LinearLayout>
