@@ -64,9 +64,35 @@
                     android:layout_height="200px" android:id="@+id/readymadepicB"
             />
         </LinearLayout>
+<!--        <LinearLayout-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--            <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" android:id="@+id/readyInfo"-->
+<!--                    tools:text="제품명 :\n제조사 :\n탄수화물 :\n단백질 :\n지방 :\n나트륨 :\n콜레스테롤 :\n당류 :"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>-->
+<!--        </LinearLayout>-->
+        <ListView
+                android:layout_width="match_parent" android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:id="@+id/foodInfoList"
+                android:background="#FFFFFF"/>
+
     </LinearLayout>
-    <ListView
-            android:layout_width="match_parent" android:visibility="gone"
-            android:layout_height="wrap_content" android:id="@+id/searchingListV" android:translationY="400px"
-            android:background="#BCBCBC"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="400px">
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foodNameSearchedRecyclerView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BCBCBC"
+        />
+    </LinearLayout>
+
 </FrameLayout>
