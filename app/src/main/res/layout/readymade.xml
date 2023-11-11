@@ -29,67 +29,44 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
         </LinearLayout>
         <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="200px" android:background="#C1DCDA">
-<!--            <SearchView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent" android:id="@+id/readymadeSearch"/>-->
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="검색"
-                    />
-            <EditText
-                    android:id="@+id/readymadeSearchEt"
+            <SearchView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent" android:id="@+id/readymadeSearch"/>
+
         </LinearLayout>
         <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="600px">
-<!--             음식사진 -->
+                android:layout_height="2300px" android:gravity="center">
             <ImageView
                     android:src="@drawable/_1"
-                    android:layout_width="0px"
-                    android:layout_height="600px" android:id="@+id/readymadeImageV" android:layout_weight="1"
+                    android:layout_width="800px"
+                    android:layout_height="800px" android:id="@+id/readymadeImageV"
                     tools:srcCompat="@drawable/_1"/>
+            <TextView
+                    android:layout_width="1200px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/readyInfo"
+                    tools:text="제품명 :\n제조사 :\n탄수화물 :\n단백질 :\n지방 :\n나트륨 :\n콜레스테롤 :\n당류 :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textSize="24sp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="clip_horizontal|center_horizontal|center_vertical">
             <Button
                     android:text="Button"
-                    android:layout_width="0dp"
-                    android:layout_height="300px" android:id="@+id/readymadepicB" android:layout_weight="1"
-                    android:translationY="100px"/>
+                    android:layout_width="800px"
+                    android:layout_height="200px" android:id="@+id/readymadepicB"
+            />
         </LinearLayout>
-<!--        <LinearLayout-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
-<!--            <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content" android:id="@+id/readyInfo"-->
-<!--                    tools:text="제품명 :\n제조사 :\n탄수화물 :\n단백질 :\n지방 :\n나트륨 :\n콜레스테롤 :\n당류 :"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>-->
-<!--        </LinearLayout>-->
-        <ListView
-                android:layout_width="match_parent" android:visibility="visible"
-                android:layout_height="wrap_content"
-                android:id="@+id/foodInfoList"
-                android:background="#FFFFFF"/>
-
     </LinearLayout>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="400px">
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/foodNameSearchedRecyclerView"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#BCBCBC"
-        />
-    </LinearLayout>
-
+    <ListView
+            android:layout_width="match_parent" android:visibility="gone"
+            android:layout_height="wrap_content" android:id="@+id/searchingListV" android:translationY="400px"
+            android:background="#BCBCBC"/>
 </FrameLayout>
