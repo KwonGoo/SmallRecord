@@ -70,28 +70,18 @@ class FoodPage : AppCompatActivity() {
         }
 
         val foodPlusB = findViewById<Button>(R.id.food_plusButton)
-        val homemadeB = findViewById<Button>(R.id.homemadeButton)
         val readyMadeB = findViewById<Button>(R.id.readymadeButton)
 
         foodPlusB.setOnClickListener {
             foodPlusB.visibility = View.GONE
-            homemadeB.visibility = View.VISIBLE
             readyMadeB.visibility = View.VISIBLE
         }
-        homemadeB.setOnClickListener {
-            val intent = Intent(this, Food_HomePage::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-            foodPlusB.visibility = View.VISIBLE
-            homemadeB.visibility = View.GONE
-            readyMadeB.visibility = View.GONE
-        }
+
         readyMadeB.setOnClickListener {
             val intent = Intent(this, Food_ReadyPage::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
             foodPlusB.visibility = View.VISIBLE
-            homemadeB.visibility = View.GONE
             readyMadeB.visibility = View.GONE
         }
 
@@ -99,7 +89,6 @@ class FoodPage : AppCompatActivity() {
 
         removeLayout.setOnClickListener{
             foodPlusB.visibility = View.VISIBLE
-            homemadeB.visibility = View.GONE
             readyMadeB.visibility = View.GONE
         }
 
