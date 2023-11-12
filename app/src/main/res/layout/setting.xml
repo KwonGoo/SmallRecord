@@ -26,19 +26,22 @@
                         android:layout_height="match_parent" android:id="@+id/profilebar">
                     <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="400px" tools:srcCompat="@drawable/baby"
-                            android:id="@+id/picture" android:layout_marginTop="180px"/>
+                            android:layout_height="400px"
+                            android:id="@+id/picture" android:layout_marginTop="180px"
+                            app:srcCompat="@drawable/circle_background" android:paddingLeft="535px"
+                            android:paddingRight="505px" android:scaleType="center"/>
                     <TextView
-                            android:text="게스트"
+                            android:text="김응애"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/babyname" android:gravity="center"
-                            android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"/>
+                            android:layout_marginTop="35px" android:textSize="24sp" android:textStyle="bold"
+                            android:textColor="#3C2E3D"/>
                     <TextView
                             android:text="126일, 양육자 1명"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/babydate"
                             android:gravity="center"
-                            android:textSize="18sp" android:layout_marginTop="18px"/>
+                            android:textSize="18sp" android:layout_marginTop="18px" android:textColor="#3C2E3D"/>
                 </LinearLayout>
             </FrameLayout>
             <LinearLayout
@@ -55,7 +58,7 @@
                             android:text="로그인  /  회원가입"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/loginpage"
-                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:textColor="#3C2E3D" android:textSize="20sp" android:textStyle="bold"
                             android:gravity="left|center_vertical" android:paddingLeft="20dp"
                             android:background="#FFFFFF" android:stateListAnimator="@null"
                             android:visibility="visible"/>
@@ -79,13 +82,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/alramresult"
                             android:layout_weight="1"
-                            android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#3C2E3D"
                             android:layout_marginLeft="20dp" android:layout_marginTop="15dp"/>
                     <Switch
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent" android:id="@+id/ASwitch"
                             android:layout_marginTop="11dp" android:layout_marginRight="25dp" android:scaleX="1.2"
-                            android:scaleY="1.2"/>
+                            android:scaleY="1.2" android:thumbTint="#8ACAC7"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -97,7 +100,7 @@
                             android:text="알림 세부 설정"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/alrampage" android:layout_weight="1"
-                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:textColor="#3C2E3D" android:textSize="20sp" android:textStyle="bold"
                             android:gravity="left|center_vertical" android:paddingLeft="20dp"
                             android:background="#FFFFFF" android:stateListAnimator="@null"/>
                 </LinearLayout>
@@ -116,7 +119,7 @@
                             android:text="연동 기기 설정"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/linkpage" android:layout_weight="1"
-                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:textColor="#3C2E3D" android:textSize="20sp" android:textStyle="bold"
                             android:gravity="left|center_vertical" android:paddingLeft="20dp"
                             android:background="#FFFFFF" android:stateListAnimator="@null"/>
                 </LinearLayout>
@@ -131,7 +134,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/comment"
                             android:layout_weight="1"
-                            android:textColor="#271B29" android:textSize="20sp" android:textStyle="bold"
+                            android:textColor="#3C2E3D" android:textSize="20sp" android:textStyle="bold"
                             android:gravity="left|center_vertical" android:paddingLeft="20dp"
                             android:background="#FFFFFF" android:stateListAnimator="@null"/>
                 </LinearLayout>
@@ -152,14 +155,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/versonname"
                             android:layout_weight="1"
-                            android:textSize="20sp" android:textStyle="bold" android:textColor="#251D27"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#3C2E3D"
                             android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
                     <TextView
                             android:text="최신버전 입니다."
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/todayverson"
                             android:textSize="18sp"
-                            android:layout_marginTop="15dp" android:layout_marginRight="15dp"/>
+                            android:layout_marginTop="17dp" android:layout_marginRight="15dp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -88,7 +88,7 @@ class BabyPage : AppCompatActivity() {
                     shitHour ++
                     shitMin = 0
                 }
-                shitTime.text = babyName + "가 똥싼지\n" + shitHour + "시간 " + shitMin + "분\n지났어요!!"
+                shitTime.text = babyName + "(이)가 똥 싼지\n" + shitHour + "시간 " + shitMin + "분 지났어요!"
                 shitMin++
                 handler.postDelayed(this,60000)
             }
@@ -97,7 +97,7 @@ class BabyPage : AppCompatActivity() {
         shitTime.setOnClickListener{
             shitHour = 0
             shitMin = 0
-            shitTime.text = babyName + "가 똥싼지\n" + "0시간 " + "0분\n지났어요!!"
+            shitTime.text = babyName + "(이)가 똥 싼지\n" + "0시간 " + "0분 지났어요!"
             handler.post(shitCounter)
         }
 
@@ -116,7 +116,7 @@ class BabyPage : AppCompatActivity() {
                     foodHour ++
                     foodMin = 0
                 }
-                foodTime.text = babyName + "가 밥먹은지\n" + foodHour + "시간 " + foodMin + "분\n지났어요!!"
+                foodTime.text = babyName + "(이)가 밥 먹은지\n" + foodHour + "시간 " + foodMin + "분 지났어요!"
                 foodMin++
                 handler.postDelayed(this,60000)
             }
@@ -125,7 +125,7 @@ class BabyPage : AppCompatActivity() {
         foodTime.setOnClickListener{
             foodHour = 0
             foodMin = 0
-            foodTime.text = babyName + "가 밥먹은지\n" + "0시간 " + "0분\n지났어요!!"
+            foodTime.text = babyName + "(이)가 밥 먹은지\n" + "0시간 " + "0분 지났어요!"
             handler.post(foodCounter)
         }
 
@@ -143,7 +143,7 @@ class BabyPage : AppCompatActivity() {
                     wakeHour ++
                     wakeMin = 0
                 }
-                wakeTime.text = babyName + "가 일어난지\n" + wakeHour + "시간 " + wakeMin + "분\n지났어요!!"
+                wakeTime.text = babyName + "가 일어난지\n" + wakeHour + "시간 " + wakeMin + "분 지났어요!"
                 wakeMin++
                 handler.postDelayed(this,60000)
             }
@@ -152,7 +152,7 @@ class BabyPage : AppCompatActivity() {
         wakeTime.setOnClickListener{
             wakeHour = 0
             wakeMin = 0
-            wakeTime.text = babyName + "가 일어난지\n" + "0시간 " + "0분\n지났어요!!"
+            wakeTime.text = babyName + "가 일어난지\n" + "0시간 " + "0분 지났어요!"
             handler.post(wakeCounter)
         }
 
@@ -171,7 +171,7 @@ class BabyPage : AppCompatActivity() {
                     plusHour ++
                     plusMin = 0
                 }
-                plusTime.text = babyName + "가 +++\n" + plusHour + "시간 " + plusMin + "분\n지났어요!!"
+                plusTime.text = babyName + "가 +++\n" + plusHour + "시간 " + plusMin + "분 지났어요!"
                 plusMin++
                 handler.postDelayed(this,60000)
             }
@@ -180,7 +180,7 @@ class BabyPage : AppCompatActivity() {
         plusTime.setOnClickListener{
            plusHour = 0
            plusMin = 0
-            plusTime.text = babyName + "가 +++\n" + "0시간 " + "0분\n지났어요!!"
+            plusTime.text = babyName + "가 +++\n" + "0시간 " + "0분 지났어요!"
             handler.post(plusCounter)
         }
 

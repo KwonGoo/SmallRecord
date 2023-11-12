@@ -38,7 +38,7 @@ class CommunityPage : AppCompatActivity() {
         }
 
         // 글쓰기버튼
-        val writeButton = findViewById<Button>(R.id.writeButton)
+        val writeButton = findViewById<ImageButton>(R.id.writeButton)
         writeButton.setOnClickListener {
             // CommunityWrite 액티비티로 이동
             val intent = Intent(this, CommunityWrite::class.java)

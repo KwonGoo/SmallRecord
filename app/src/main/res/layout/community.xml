@@ -72,11 +72,26 @@
             android:layout_gravity="center_horizontal"
             android:divider="@android:color/darker_gray"
             android:dividerHeight="4px"/>
-    <Button
-            android:text="글쓰기"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/writeButton"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="190px" android:gravity="center_vertical">
+        <ImageView
+                android:src="@drawable/communitybutton_x"
+                android:layout_width="200px"
+                android:id="@+id/imageView4" android:layout_height="match_parent" android:layout_marginLeft="50px"
+                android:scaleX="0.8" android:scaleY="0.8"/>
+        <TextView
+                android:text="커뮤니티"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView2" android:textColor="#FFFFFF"
+                android:textStyle="bold" android:textSize="24sp"/>
+        <ImageButton
+                android:src="@drawable/edit2"
+                android:layout_width="200px"
+                android:layout_height="match_parent" android:id="@+id/writeButton" android:layout_marginLeft="625px"
+                android:background="#FCAD83" android:scaleType="fitCenter" android:padding="25px"/>
+    </LinearLayout>
 
 
 </FrameLayout>
