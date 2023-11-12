@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.ResultPoint
@@ -20,7 +19,12 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 import com.journeyapps.barcodescanner.DefaultDecoderFactory
 import java.util.*
+import kotlinx.serialization.json.buildJsonObject
+import org.json.JSONObject
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
+
 
 class BarcodeCameraPage : AppCompatActivity() {
     private var beepManager: BeepManager? = null
@@ -44,10 +48,13 @@ class BarcodeCameraPage : AppCompatActivity() {
                     return
                 }
 
-                val barcodeNumJson = BarcodeNum("barcodeNum",result.text)
+                val sendMessage = buildJsonObject {
+                    put("messageType","barcodeNum")
+                    put("barcodeNum",result.text)
+                }
 
-                webSocketManager.connectToServer(barcodeNumJson)
-                Toast.makeText(context, "이유식이 추가 되었습니다. ("+result.text+")", Toast.LENGTH_SHORT).show()
+                webSocketManager.connectToServer(sendMessage.toString()+"\n")
+                Toast.makeText(context, sendMessage.toString(), Toast.LENGTH_SHORT).show()
                 lastText = result.text
 
                 finish()

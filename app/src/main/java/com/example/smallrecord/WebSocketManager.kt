@@ -9,6 +9,9 @@ import java.net.Socket
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 class WebSocketManager {
 
@@ -16,7 +19,7 @@ class WebSocketManager {
     private var reader: BufferedReader? = null
     private var writer: PrintWriter? = null
 
-    fun connectToServer(message:BarcodeNum) {
+    fun connectToServer(message:String) {
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
@@ -27,7 +30,7 @@ class WebSocketManager {
                 writer = PrintWriter(socket!!.getOutputStream(), true)
 
                 // 서버로 메시지 전송
-                val message = message
+                val message = message.toString()
                 writer!!.println(message)
 
                 // 서버 응답 받기
