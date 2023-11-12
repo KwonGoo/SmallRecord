@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -52,8 +53,9 @@ class BarcodeCameraPage : AppCompatActivity() {
                     put("messageType","barcodeNum")
                     put("barcodeNum",result.text)
                 }
-
                 webSocketManager.connectToServer(sendMessage.toString()+"\n")
+
+
                 Toast.makeText(context, sendMessage.toString(), Toast.LENGTH_SHORT).show()
                 lastText = result.text
 

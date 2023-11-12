@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import com.example.smallrecord.R
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 class CommunityWrite : AppCompatActivity() {
     @SuppressLint("WrongViewCast", "MissingInflatedId")
@@ -73,6 +75,7 @@ class CommunityWrite : AppCompatActivity() {
         val titleEditText = findViewById<EditText>(R.id.titleEditText)
         val contentEditText = findViewById<EditText>(R.id.contentEditText)
         val completeButton = findViewById<Button>(R.id.completeButton)
+        val webSocketManager = WebSocketManager()
 
         completeButton.setOnClickListener {
             // 입력한 제목과 내용 가져오기
@@ -83,6 +86,14 @@ class CommunityWrite : AppCompatActivity() {
             val intent = Intent()
             intent.putExtra("title", title)
             intent.putExtra("content", content)
+
+            val sendMessage = buildJsonObject {
+                put("messageType","communityWrite")
+                put("title",title)
+                put("content",content)
+            }
+            webSocketManager.connectToServer(sendMessage.toString()+"\n")
+
             setResult(RESULT_OK, intent)
             finish()
             overridePendingTransition(0, 0)
