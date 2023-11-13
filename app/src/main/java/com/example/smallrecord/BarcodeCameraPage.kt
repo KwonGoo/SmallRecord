@@ -5,15 +5,13 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.KeyEvent
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.ResultPoint
 import com.google.zxing.client.android.BeepManager
@@ -22,6 +20,12 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 import com.journeyapps.barcodescanner.DefaultDecoderFactory
 import java.util.*
+import kotlinx.serialization.json.buildJsonObject
+import org.json.JSONObject
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
+
 
 class BarcodeCameraPage : AppCompatActivity() {
     private var beepManager: BeepManager? = null
@@ -32,7 +36,8 @@ class BarcodeCameraPage : AppCompatActivity() {
     private lateinit var barcodeScanner: DecoratedBarcodeView
     private val DELAY = 10000 // 1 second
     private val readyList = mutableListOf<String>();
-
+    private val webSocketManager = WebSocketManager()
+    private val mapper: ObjectMapper? = null
 
     private val callback: BarcodeCallback = object : BarcodeCallback {
         private var lastTimestamp: Long = 0
@@ -44,7 +49,14 @@ class BarcodeCameraPage : AppCompatActivity() {
                     return
                 }
 
-                Toast.makeText(context, "이유식이 추가 되었습니다. ("+result.text+")", Toast.LENGTH_SHORT).show()
+                val sendMessage = buildJsonObject {
+                    put("messageType","barcodeNum")
+                    put("barcodeNum",result.text)
+                }
+                webSocketManager.connectToServer(sendMessage.toString()+"\n")
+
+
+                Toast.makeText(context, sendMessage.toString(), Toast.LENGTH_SHORT).show()
                 lastText = result.text
 
                 finish()
@@ -82,6 +94,8 @@ class BarcodeCameraPage : AppCompatActivity() {
         beepManager = BeepManager(this)
         beepManager!!.isVibrateEnabled = true
         barcodeScanner.decodeContinuous(callback)
+
+
     }
 
 

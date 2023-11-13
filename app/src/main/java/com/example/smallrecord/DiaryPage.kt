@@ -23,6 +23,7 @@ import com.example.smallrecord.databinding.DiaryBinding
 class DiaryPage : AppCompatActivity() {
             private lateinit var binding : DiaryBinding
             private lateinit var diaryArrayList: ArrayList<DiaryItem>
+            private val webSocketManager = WebSocketManager()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
