@@ -61,8 +61,9 @@
         <ImageButton
                 android:background="#ffffff"
                 android:layout_width="0px"
-                android:layout_height="230px" app:srcCompat="@drawable/baseline_doorbell_24"
-                android:id="@+id/alamButton" android:layout_weight="1"/>
+                android:layout_height="230px" app:srcCompat="@drawable/bell"
+                android:id="@+id/alamButton" android:layout_weight="1" android:scaleType="fitCenter"
+                android:padding="40px"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="0px"
@@ -84,7 +85,7 @@
                 android:layout_width="0px"
                 android:layout_height="230px"
                 android:id="@+id/otherBabyButton" android:layout_weight="1"
-                android:src="@drawable/baby"/>
+                android:src="@drawable/babylist" android:scaleType="fitCenter" android:padding="40px"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
@@ -109,7 +110,7 @@
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2037px" android:translationY="430px">
+            android:layout_height="2042px" android:translationY="430px">
         <ListView
                 android:id="@+id/diaryList"
                 android:layout_width="match_parent"
@@ -118,17 +119,17 @@
         />
     </LinearLayout>
     <LinearLayout
-            android:background="#DAE9E4"
+            android:background="#8BCBC8"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="170px" android:translationY="2465px">
+            android:layout_height="170px" android:translationY="2472px">
         <TextView
-                android:layout_width="1260px"
+                android:layout_width="1270px"
                 android:layout_height="wrap_content" android:id="@+id/doCount"/>
         <Button
-                android:layout_width="180px"
-                android:layout_height="wrap_content" android:id="@+id/doButton"
-                android:background="@drawable/baseline_check_24"/>
+                android:layout_width="150px"
+                android:layout_height="150px" android:id="@+id/doButton"
+                android:background="@drawable/edit" android:scaleX="0.8" android:scaleY="0.8"/>
     </LinearLayout>
     <ListView
             android:id="@+id/doList"

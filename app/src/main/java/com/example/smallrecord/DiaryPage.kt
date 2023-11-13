@@ -105,7 +105,7 @@ class DiaryPage : AppCompatActivity() {
             }
 
         val imageId = intArrayOf(
-            R.drawable.baby,R.drawable._1,R.drawable.diary
+            R.drawable.diaper,R.drawable.babyfood,R.drawable.sleeping
         )
 
 
@@ -113,7 +113,7 @@ class DiaryPage : AppCompatActivity() {
         val name = arrayOf("똥싸기", "밥먹기", "잠자기")
 
         val buttonImage = intArrayOf(
-            R.drawable.baseline_arrow_forward_ios_24
+            R.drawable.arrow
         )
 
         diaryArrayList = ArrayList()
