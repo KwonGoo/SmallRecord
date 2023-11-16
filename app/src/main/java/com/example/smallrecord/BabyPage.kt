@@ -159,7 +159,7 @@ class BabyPage : AppCompatActivity() {
 
         var plusHour = 0
         var plusMin = 0
-        val plusTime = findViewById<TextView>(R.id.plusTime)
+        val plusTime = findViewById<Button>(R.id.plusTime)
 
         val plusCounter = object : Runnable {
             override fun run() {
@@ -178,10 +178,9 @@ class BabyPage : AppCompatActivity() {
         }
 
         plusTime.setOnClickListener{
-           plusHour = 0
-           plusMin = 0
-            plusTime.text = babyName + "가 +++\n" + "0시간 " + "0분\n지났어요!!"
-            handler.post(plusCounter)
+            val intent = Intent(this, Vaccine::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
 
 
