@@ -17,6 +17,8 @@ import kotlinx.serialization.json.put
 import org.json.JSONException
 import org.json.JSONObject
 import android.widget.ImageButton
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 
 class Setting_RegisterPage : AppCompatActivity() {
@@ -34,18 +36,44 @@ class Setting_RegisterPage : AppCompatActivity() {
         }
         val webSocketManager = WebSocketManager()
 
-        val loginId:String ?= ""
-        val password:String ?= ""
-        val name:String ?= ""
-         val birthDate:String ?= ""
-         val gender:String ?= ""
-        val email:String ?= ""
+        val loginIdText = findViewById<EditText>(R.id.join_id)
+        val passwordText = findViewById<EditText>(R.id.join_password)
+        val nameText = findViewById<EditText>(R.id.join_name)
+        val birthText = findViewById<EditText>(R.id.join_date)
+        val genderText = findViewById<RadioGroup>(R.id.gender)
+        val emailText = findViewById<EditText>(R.id.join_email)
+
         val signupButton = findViewById<Button>(R.id.join_button)
 
-        //loginId = findViewById(R.id.)
+
+
+
+        var gender = ""
+
+
+        genderText.setOnCheckedChangeListener { group, checkedId ->
+            // checkedId는 현재 선택된 라디오 버튼의 ID입니다.
+            when (checkedId) {
+                R.id.man -> {
+                    gender = "MAN"
+                }
+
+                R.id.woman -> {
+                    gender = "WOMAN"
+                }
+            }
+        }
+
+
 
         signupButton.setOnClickListener{
             val post = "POST /api/member/signup"
+            val loginId = loginIdText.text.toString()
+            val password:String = passwordText.text.toString()
+            val name:String = nameText.text.toString()
+            val birthDate:String = birthText.text.toString()
+            val email:String = emailText.text.toString()
+
 
             val sendMessage = buildJsonObject {
                 put("loginId",loginId)
@@ -57,6 +85,12 @@ class Setting_RegisterPage : AppCompatActivity() {
             }
 
             webSocketManager.sendPostToServer(post, sendMessage)
+
+            val intent = Intent(this, Setting_LoginPage::class.java)
+
+
+
+            startActivity(intent)
 
         }
 
