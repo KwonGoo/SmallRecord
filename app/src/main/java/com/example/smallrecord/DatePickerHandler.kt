@@ -3,10 +3,11 @@ package com.example.smallrecord
 import android.app.DatePickerDialog
 import android.content.Context
 import android.widget.DatePicker
+import android.widget.EditText
 import android.widget.TextView
 import java.util.*
 
-class DatePickerHandler(private val context: Context, private val textView: TextView) {
+class DatePickerHandler(private val context: Context, private val editText: EditText) {
 
     fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
@@ -19,7 +20,7 @@ class DatePickerHandler(private val context: Context, private val textView: Text
             DatePickerDialog.OnDateSetListener { view: DatePicker?, selectedYear: Int, selectedMonth: Int, selectedDay: Int ->
                 // 날짜가 선택되면 실행되는 콜백 함수
                 val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDay"
-                textView.text = selectedDate
+                editText.setText(selectedDate)
             },
             year,
             month,
@@ -33,3 +34,4 @@ class DatePickerHandler(private val context: Context, private val textView: Text
         datePickerDialog.show()
     }
 }
+

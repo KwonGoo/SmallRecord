@@ -18,7 +18,7 @@ class Setting_RegisterPage : AppCompatActivity() {
     private lateinit var joinButton: Button
     private lateinit var previousButton: Button
     private lateinit var joindatebtn : ImageButton
-    private lateinit var datetext : TextView
+    private lateinit var datetext : EditText
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
