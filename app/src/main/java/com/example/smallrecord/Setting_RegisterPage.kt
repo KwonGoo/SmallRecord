@@ -16,7 +16,6 @@ class Setting_RegisterPage : AppCompatActivity() {
     private lateinit var joinName: EditText
     private lateinit var joinPwck: EditText
     private lateinit var joinButton: Button
-    private lateinit var checkButton: Button
     private lateinit var previousButton: Button
     private lateinit var joindatebtn : ImageButton
     private lateinit var datetext : TextView
@@ -35,7 +34,6 @@ class Setting_RegisterPage : AppCompatActivity() {
         joinPassword = findViewById(R.id.join_password)
         joinName = findViewById(R.id.join_id)
         joinPwck = findViewById(R.id.join_pwck)
-        checkButton = findViewById(R.id.check_button)
         joinButton = findViewById(R.id.join_button)
 
         joindatebtn = findViewById(R.id.joindatebtn)

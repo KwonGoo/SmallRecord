@@ -18,16 +18,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:gravity="center_horizontal">
             <EditText
-                    android:layout_width="700px"
+                    android:layout_width="1050px"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:ems="10"
                     android:id="@+id/join_id" android:hint="아이디" android:textColor="#251A27"/>
-            <Button
-                    android:text="중복확인"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/check_button" android:background="#FDAE84"
-                    android:textColor="#FFFFFF"/>
         </LinearLayout>
         <EditText
                 android:layout_width="1050px"
