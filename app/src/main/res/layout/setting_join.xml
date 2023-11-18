@@ -22,7 +22,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:ems="10"
-                    android:id="@+id/join_name" android:hint="이름/닉네임"/>
+                    android:id="@+id/join_id" android:hint="아이디" android:textColor="#251A27"/>
             <Button
                     android:text="중복확인"
                     android:layout_width="wrap_content"
@@ -30,23 +30,73 @@
                     android:textColor="#FFFFFF"/>
         </LinearLayout>
         <EditText
-                android:layout_width="1000px"
+                android:layout_width="1050px"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:ems="10"
-                android:id="@+id/join_email" android:hint="이메일" android:layout_marginTop="100px"/>
+                android:id="@+id/join_email" android:hint="이메일" android:layout_marginTop="100px"
+                android:textColor="#251A27"/>
         <EditText
-                android:layout_width="1000px"
+                android:layout_width="1050px"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="10"
-                android:id="@+id/join_password" android:hint="비밀번호" android:layout_marginTop="100px"/>
+                android:id="@+id/join_name" android:hint="아이 이름" android:layout_marginTop="100px"
+                android:textColor="#251A27"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="center_horizontal"
+                android:layout_marginTop="100px">
+            <TextView
+                    android:text="아이 생년월일"
+                    android:layout_width="850px"
+                    android:layout_height="wrap_content" android:id="@+id/join_date"
+                    android:textSize="18sp" android:textStyle="normal"
+                    android:background="?android:attr/editTextBackground" android:textColor="#251A27"/>
+            <ImageButton
+                    android:src="@drawable/calendar1"
+                    android:layout_width="200px"
+                    android:layout_height="150px" android:id="@+id/joindatebtn" android:background="#FCAD83"
+                    android:scaleType="fitCenter" android:padding="20px"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="100px">
+            <TextView
+                    android:text="아이 성별"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView4" android:textSize="18sp"
+                    android:layout_marginRight="120px" android:textColor="#251A27"/>
+            <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:id="@+id/gender" android:gravity="center">
+                <RadioButton
+                        android:text="남자"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/man" android:layout_marginRight="80px"/>
+                <RadioButton
+                        android:text="여자"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/woman" android:layout_marginLeft="80px"/>
+            </RadioGroup>
+        </LinearLayout>
         <EditText
-                android:layout_width="1000px"
+                android:layout_width="1050px"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/join_pwck" android:hint="비밀번호 확인" android:layout_marginTop="100px"/>
+                android:id="@+id/join_password" android:hint="비밀번호" android:layout_marginTop="100px"
+                android:textColor="#251A27"/>
+        <EditText
+                android:layout_width="1050px"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/join_pwck" android:hint="비밀번호 확인" android:layout_marginTop="100px"
+                android:textColor="#251A27"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
