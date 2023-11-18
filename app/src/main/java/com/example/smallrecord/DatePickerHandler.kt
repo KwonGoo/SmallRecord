@@ -10,25 +10,31 @@ import java.util.*
 class DatePickerHandler(private val context: Context, private val editText: EditText) {
 
     fun showDatePickerDialog() {
+        val currentDate = editText.text.toString()
         val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        if (currentDate.isNotEmpty()) {
+            val dateParts = currentDate.split("-")
+            val year = dateParts[0].toInt()
+            val month = dateParts[1].toInt() - 1 // Calendar의 월은 0부터 시작
+            val day = dateParts[2].toInt()
+
+            calendar.set(year, month, day)
+        }
 
         val datePickerDialog = DatePickerDialog(
             context, R.style.MyDatePickerDialogTheme,
-            DatePickerDialog.OnDateSetListener { view: DatePicker?, selectedYear: Int, selectedMonth: Int, selectedDay: Int ->
+            DatePickerDialog.OnDateSetListener { _, year, month, day ->
                 // 날짜가 선택되면 실행되는 콜백 함수
-                val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDay"
+                val formattedMonth = String.format("%02d", month + 1)
+                val formattedDay = String.format("%02d", day)
+                val selectedDate = "$year-$formattedMonth-$formattedDay"
                 editText.setText(selectedDate)
             },
-            year,
-            month,
-            day
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
         )
-
-        // 캘린더의 현재 날짜를 기본값으로 설정
-        datePickerDialog.datePicker.init(year, month, day, null)
 
         // 다이얼로그 표시
         datePickerDialog.show()
