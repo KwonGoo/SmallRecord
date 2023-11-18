@@ -53,7 +53,7 @@ class BarcodeCameraPage : AppCompatActivity() {
                     put("messageType","barcodeNum")
                     put("barcodeNum",result.text)
                 }
-                webSocketManager.connectToServer(sendMessage.toString()+"\n")
+              //  webSocketManager.connectToServer(sendMessage.toString()+"\n")
 
 
                 Toast.makeText(context, sendMessage.toString(), Toast.LENGTH_SHORT).show()

@@ -13,6 +13,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -23,6 +25,8 @@ class Setting_LoginPage : AppCompatActivity() {
     private lateinit var loginPassword: EditText
     private lateinit var loginButton: Button
     private lateinit var joinButton: Button
+    private lateinit var mypageButton: Button
+    private lateinit var loginPage: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,57 +49,47 @@ class Setting_LoginPage : AppCompatActivity() {
 
         loginButton = findViewById(R.id.login_button)
         loginButton.setOnClickListener {
-            val userEmail = loginId.text.toString()
+            val userId = loginId.text.toString()
             val userPassword = loginPassword.text.toString()
 
-            if (userEmail.isEmpty() || userPassword.isEmpty()) {
+            if (userId.isEmpty() || userPassword.isEmpty()) {
                 // 이메일 또는 비밀번호 필드 중 하나라도 비웠을 때
-                val builder = AlertDialog.Builder(this@Setting_LoginPage)
+                val builder = AlertDialog.Builder(this)
                 builder.setMessage("모두 입력해주세요")
                     .setNegativeButton("확인", null)
                     .create()
                     .show()
             }
 
-            val responseListener = Response.Listener<String> { response ->
-                try {
-                    val jsonObject = JSONObject(response)
-                    val success = jsonObject.getBoolean("success")
 
-                    if (success) {
-                        val userEmail = jsonObject.getString("userEmail")
-                        val userPassword = jsonObject.getString("userPassword")
-                        val userName = jsonObject.getString("userName")
 
-                        val appPreferences = AppPreferences(applicationContext)
-                        appPreferences.saveUserCredentials(userEmail, userName)
 
-                        Toast.makeText(
-                            applicationContext,
-                            "${userName}님 환영합니다.",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    val webSocketManager = WebSocketManager()
 
-                        val intent = Intent(this@Setting_LoginPage, SettingPage::class.java)
+                    val post = "POST /api/member/login"
 
-                        intent.putExtra("userEmail", userEmail)
-                        intent.putExtra("userPassword", userPassword)
-                        intent.putExtra("userName", userName)
-
-                        startActivity(intent)
-
-                    } else {
-                        Toast.makeText(applicationContext, "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show()
+                    val sendMessage = buildJsonObject {
+                        put("loginId",userId)
+                        put("password",userPassword)
                     }
 
-                } catch (e: JSONException) {
-                    e.printStackTrace()
-                }
-            }
-            val loginRequest = Setting_LoginRequest(userEmail, userPassword, responseListener)
-            val queue = Volley.newRequestQueue(this@Setting_LoginPage)
-            queue.add(loginRequest)
+                    webSocketManager.sendPostToServer(post,sendMessage)
+
+
+
+                    val intent = Intent(this, SettingPage::class.java)
+
+
+
+                    startActivity(intent)
+
+
+
+
+
+
         }
+
     }
 
     override fun onStop() {
@@ -104,3 +98,5 @@ class Setting_LoginPage : AppCompatActivity() {
         dialog = null
     }
 }
+
+

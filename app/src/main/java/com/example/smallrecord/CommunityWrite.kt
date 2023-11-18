@@ -87,12 +87,24 @@ class CommunityWrite : AppCompatActivity() {
             intent.putExtra("title", title)
             intent.putExtra("content", content)
 
-            val sendMessage = buildJsonObject {
+            /*val sendMessage = buildJsonObject {
                 put("messageType","communityWrite")
                 put("title",title)
                 put("content",content)
+            }*/
+
+            val post = "POST /api/member/signup"
+
+            val sendMessage = buildJsonObject {
+                put("loginId","asd123")
+                put("password","password1!")
+                put("name","이종석")
+                put("birthDate","2001-01-01")
+                put("gender","WOMAN")
+                put("email","asd123@gmail.com")
             }
-            webSocketManager.connectToServer(sendMessage.toString()+"\n")
+            //webSocketManager.connectToServer(sendMessage.toString()+"\n")
+            webSocketManager.sendPostToServer(post, sendMessage)
 
             setResult(RESULT_OK, intent)
             finish()
