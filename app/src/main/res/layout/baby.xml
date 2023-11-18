@@ -129,12 +129,12 @@
                         android:layout_width="0dp"
                         android:layout_height="660.5px" android:layout_weight="1">
 
-                    <TextView
-                            android:gravity="center"
-                            android:text="+"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:id="@+id/plusTime" android:layout_weight="1"
-                            android:textSize="16sp" android:textAlignment="center" android:textColor="#3C2E3D"/>
+                    <Button
+                            android:text="예방접종"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/plusTime"
+                            android:translationX="200px" android:translationY="250px" android:scaleX="2"
+                            android:scaleY="2"/>
                 </FrameLayout>
             </LinearLayout>
         </LinearLayout>
