@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -17,6 +16,8 @@ import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import org.json.JSONException
 import org.json.JSONObject
+import android.widget.ImageButton
+import android.widget.TextView
 
 class Setting_RegisterPage : AppCompatActivity() {
 
