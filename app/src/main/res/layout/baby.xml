@@ -56,7 +56,7 @@
 
     <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="2642px">
+            android:layout_height="2635px">
 
 
         <LinearLayout
@@ -67,59 +67,43 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="660.5px">
-                <LinearLayout
+                <FrameLayout
                         android:layout_width="0px"
                         android:layout_height="660.5px"
-                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
-                        android:padding="80px">
+                        android:layout_weight="1">
 
-                    <ImageView
-                            android:src="@drawable/diaper"
-                            android:layout_width="250px"
-                            android:layout_height="250px" android:id="@+id/imageView"/>
                     <TextView
                             android:clickable="true"
-                            android:text="응애(이)가 똥을 싸면\n눌러주세요!"
+                            android:text="응애가 똥을 싸면\n눌러주세요!"
                             android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/shitTime"
                             android:textAlignment="center"
-                            android:textSize="16sp" android:textColor="#3C2E3D"/>
-                </LinearLayout>
-                <LinearLayout
+                            android:textSize="25sp" android:drawablePadding="10dp"/>
+                </FrameLayout>
+                <FrameLayout
                         android:layout_width="0dp"
-                        android:layout_height="660.5px" android:layout_weight="1" android:orientation="vertical"
-                        android:gravity="center" android:padding="80px">
+                        android:layout_height="660.5px" android:layout_weight="1">
 
-                    <ImageView
-                            android:src="@drawable/babyfood"
-                            android:layout_width="250px"
-                            android:layout_height="250px" android:id="@+id/imageView2"/>
                     <TextView
                             android:gravity="center"
-                            android:text="응애(이)가 밥 먹으면\n눌러주세요!"
+                            android:text="응애가 밥먹으면\n눌러주세요!"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/foodTime" android:layout_weight="1"
-                            android:textSize="16sp" android:textAlignment="center" android:textColor="#3C2E3D"/>
-                </LinearLayout>
+                            android:textSize="25sp" android:textAlignment="center"/>
+                </FrameLayout>
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <LinearLayout
+                <FrameLayout
                         android:layout_width="0dp"
-                        android:layout_height="660.5px" android:layout_weight="1" android:orientation="vertical"
-                        android:gravity="center" android:padding="80px">
+                        android:layout_height="660.5px" android:layout_weight="1">
 
-                    <ImageView
-                            android:src="@drawable/sleeping"
-                            android:layout_width="250px"
-                            android:layout_height="250px" android:id="@+id/imageView3"
-                    />
                     <TextView
                             android:gravity="center"
-                            android:text="응애(이)가 일어나면 \n눌러주세요!"
+                            android:text="응애가 일어나면 \n눌러주세요!"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/wakeTime"
                             android:textSize="25sp" android:textAlignment="center" android:layout_weight="1"/>
@@ -133,12 +117,9 @@
                             android:layout_height="wrap_content" android:id="@+id/plusTime"
                             android:translationX="200px" android:translationY="250px" android:scaleX="2"
                             android:scaleY="2"/>
-
-
-
                 </FrameLayout>
-
-
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
 
                 android:orientation="horizontal"
@@ -147,30 +128,30 @@
             <ImageView
                     android:layout_width="110.7px"
                     android:layout_height="1230px" android:id="@+id/sugars"
-                    android:translationY="92px" android:translationX="110.7px" android:background="#FD7676"/>
+                    android:translationY="92px" android:translationX="110.7px" android:background="#FF0000"/>
             <ImageView
                     android:layout_width="110.7px"
                     android:layout_height="1230px"
                     android:id="@+id/carbohydrate" android:translationX="221.4px" android:translationY="92px"
-                    android:background="#FF9C7D"/>
+                    android:background="#FF5722"/>
             <ImageView
                     android:layout_height="1230px"
                     android:id="@+id/natrium" android:translationX="332.4px" android:translationY="92px"
-                    android:layout_width="110.7px" android:background="#FDF395"/>
+                    android:layout_width="110.7px" android:background="#FFEB3B"/>
             <ImageView
                     android:layout_height="1230px"
                     android:id="@+id/protein" android:translationX="443.1px" android:translationY="92px"
-                    android:layout_width="110.7px" android:background="#BEE195"/>
+                    android:layout_width="110.7px" android:background="#8BC34A"/>
             <ImageView
                     android:layout_height="1230px"
                     android:id="@+id/fat" android:translationX="553.8px" android:translationY="92px"
-                    android:layout_width="110.7px" android:background="#7ABAED"/>
+                    android:layout_width="110.7px" android:background="#2196F3"/>
             <ImageView
                     android:layout_height="1230px"
                     android:id="@+id/cholesterol" android:translationX="664.5px" android:translationY="92px"
-                    android:layout_width="110.7px" android:background="#CF70DF"/>
+                    android:layout_width="110.7px" android:background="#9C27B0"/>
         </LinearLayout>
-
+    </FrameLayout>
 
 
 </FrameLayout>
