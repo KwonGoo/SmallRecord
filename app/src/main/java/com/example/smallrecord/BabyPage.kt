@@ -159,23 +159,7 @@ class BabyPage : AppCompatActivity() {
 
         var plusHour = 0
         var plusMin = 0
-        val plusTime = findViewById<Button>(R.id.plusTime)
-
-        val plusCounter = object : Runnable {
-            override fun run() {
-
-
-
-                if (plusMin == 60)
-                {
-                    plusHour ++
-                    plusMin = 0
-                }
-                plusTime.text = babyName + "가 +++\n" + plusHour + "시간 " + plusMin + "분 지났어요!"
-                plusMin++
-                handler.postDelayed(this,60000)
-            }
-        }
+        val plusTime = findViewById<ImageButton>(R.id.plusTime)
 
         plusTime.setOnClickListener{
             val intent = Intent(this, Vaccine::class.java)

@@ -1,6 +1,7 @@
 package com.example.smallrecord
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.icu.util.Calendar
@@ -10,7 +11,9 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Layout
+import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
@@ -125,12 +128,24 @@ class DiaryPage : AppCompatActivity() {
         val doList = findViewById<ListView>(R.id.doList)
 
         doCountButton.setOnClickListener{
-            if(doList.visibility == ListView.GONE)
+            val dialog = Dialog(this)
+            val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_writediary, null)
+            dialog.setContentView(dialogView)
+
+            val window = dialog.window
+            val layoutParams = WindowManager.LayoutParams()
+            layoutParams.copyFrom(window!!.attributes)
+            layoutParams.width = (resources.displayMetrics.widthPixels)
+            window.attributes = layoutParams
+
+            dialog.show()
+
+            /*if(doList.visibility == ListView.GONE)
             doList.visibility = ListView.VISIBLE
 
             else if(doList.visibility == ListView.VISIBLE){
             doList.visibility = ListView.GONE
-        }
+        }*/
         }
 
 

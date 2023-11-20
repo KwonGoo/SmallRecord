@@ -138,7 +138,7 @@
             android:layout_height="1000px"
             android:translationX="220px"
             android:translationY="1000px"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
 
 </FrameLayout>

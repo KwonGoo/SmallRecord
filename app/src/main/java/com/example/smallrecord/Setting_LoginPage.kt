@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
+import kotlinx.coroutines.handleCoroutineException
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import org.json.JSONException
@@ -25,8 +26,6 @@ class Setting_LoginPage : AppCompatActivity() {
     private lateinit var loginPassword: EditText
     private lateinit var loginButton: Button
     private lateinit var joinButton: Button
-    private lateinit var mypageButton: Button
-    private lateinit var loginPage: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,9 +60,6 @@ class Setting_LoginPage : AppCompatActivity() {
                     .show()
             }
 
-
-
-
                     val webSocketManager = WebSocketManager()
 
                     val post = "POST /api/member/login"
@@ -75,11 +71,11 @@ class Setting_LoginPage : AppCompatActivity() {
 
                     webSocketManager.sendPostToServer(post,sendMessage)
 
-
+                    val appPreferences = AppPreferences(applicationContext)
+                    appPreferences.saveUserCredentials(userId)
+                    Toast.makeText(applicationContext, "${userId}님 환영합니다.", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, SettingPage::class.java)
-
-
 
                     startActivity(intent)
 
@@ -91,6 +87,7 @@ class Setting_LoginPage : AppCompatActivity() {
         }
 
     }
+
 
     override fun onStop() {
         super.onStop()

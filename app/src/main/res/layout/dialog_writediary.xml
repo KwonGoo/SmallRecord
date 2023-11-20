@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="2500px" android:orientation="vertical">
+
+    <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="1440px"
+            android:layout_height="2220px" android:translationY="130px" android:background="#FFFFFF">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="1440px"
+                android:layout_height="match_parent" android:gravity="center_horizontal">
+            <ImageView
+                    android:src="@drawable/photoframe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="580px" android:id="@+id/imageView7"
+                    android:layout_marginTop="200px"/>
+            <ImageView
+                    android:src="@drawable/divider1"
+                    android:layout_width="1300px"
+                    android:layout_height="wrap_content" android:id="@+id/imageView8"
+                    android:layout_marginTop="35px"/>
+            <HorizontalScrollView
+                    android:layout_width="1300px"
+                    android:layout_height="200px" android:id="@+id/conditionselect">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                    <ImageButton
+                            android:src="@drawable/babyfood"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/seletefood"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px"/>
+                    <ImageButton
+                            android:src="@drawable/diaper"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/selectdiaper"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px"/>
+                    <ImageButton
+                            android:src="@drawable/shower"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/selectshower"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px"/>
+                    <ImageButton
+                            android:src="@drawable/sleeping"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/selectsleep"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px"/>
+                    <ImageButton
+                            android:src="@drawable/sleeping"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/selectsleep2"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px" android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@drawable/sleeping"
+                            android:layout_width="200px"
+                            android:layout_height="200px" android:id="@+id/selectsleep3"
+                            android:scaleType="fitCenter" android:background="#FEFEFE"
+                            android:layout_marginRight="50px" android:layout_weight="1"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <ImageView
+                    android:src="@drawable/divider1"
+                    android:layout_width="1300px"
+                    android:layout_height="wrap_content" android:id="@+id/imageView9"/>
+            <ScrollView
+                    android:layout_width="1300px"
+                    android:layout_height="match_parent" android:id="@+id/conditionsetting">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <ImageButton
+                android:src="@drawable/camera"
+                android:layout_width="200px"
+                android:layout_height="200px" android:id="@+id/camerabtn" android:background="#C2C2C2"
+                android:scaleType="fitCenter" android:translationX="615px" android:translationY="380px"/>
+    </FrameLayout>
+    <ImageView
+            android:src="@drawable/spring"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp" android:id="@+id/spring" tools:layout_editor_absoluteY="-96dp"
+            tools:layout_editor_absoluteX="0dp" android:scaleType="fitCenter"/>
+</FrameLayout>

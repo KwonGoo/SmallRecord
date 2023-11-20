@@ -64,10 +64,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="400px" android:background="#F8ECEC">
                 <ImageView
-                        app:srcCompat="@drawable/babybutton_o"
+                        app:srcCompat="@drawable/vaccine"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" android:id="@+id/imageView2" android:layout_weight="2"
-                />
+                        android:scaleType="fitCenter" android:padding="50px"/>
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -50,7 +51,7 @@ class Food_ReadyPage : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
 
-        val BackFoodB = findViewById<Button>(R.id.BackFoodButton)
+        val BackFoodB = findViewById<ImageButton>(R.id.BackFoodButton)
         BackFoodB.setOnClickListener {
             val intent = Intent(this, FoodPage::class.java)
             startActivity(intent)

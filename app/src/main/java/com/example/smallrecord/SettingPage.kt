@@ -102,9 +102,7 @@ class SettingPage : AppCompatActivity() {
         val appPreferences = AppPreferences(applicationContext)
         if (appPreferences.isLoggedIn()) {
             // 로그인된 상태
-            val user = appPreferences.getUserName()
             val textText = findViewById<TextView>(R.id.babyname)
-            textText.text = "$user"
 
             LoginPage.visibility = View.GONE;
             MyPage.visibility = View.VISIBLE;

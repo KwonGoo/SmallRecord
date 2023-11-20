@@ -42,8 +42,12 @@ class Setting_RegisterPage : AppCompatActivity() {
         val birthText = findViewById<EditText>(R.id.join_date)
         val genderText = findViewById<RadioGroup>(R.id.gender)
         val emailText = findViewById<EditText>(R.id.join_email)
-
         val signupButton = findViewById<Button>(R.id.join_button)
+        val backBtn = findViewById<Button>(R.id.delete)
+
+        backBtn.setOnClickListener {
+            finish()
+        }
 
 
 

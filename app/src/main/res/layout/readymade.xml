@@ -10,28 +10,28 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="200px" android:background="#8bcbc8">
-            <Button
-                    android:text="뒤"
-                    android:layout_width="0px"
-                    android:id="@+id/BackFoodButton"
-                    android:layout_height="wrap_content" android:layout_weight="0.20"
-                    android:textSize="28sp" android:textColor="#3c2e3d"/>
+                android:layout_height="200px" android:background="#8bcbc8" android:gravity="center_vertical">
+            <ImageButton
+                    android:src="@drawable/x"
+                    android:layout_width="300px"
+                    android:layout_height="wrap_content" android:id="@+id/BackFoodButton" android:layout_weight="0.5"
+                    android:background="#8ACAC7" android:scaleType="fitCenter"/>
             <TextView
-                    android:layout_width="0px"
-                    android:layout_height="180px" android:id="@+id/readymadeHeadtxetV" android:textSize="28sp"
-                    android:layout_weight="1" android:text="기성 이유식 추가" android:rotationX="0" android:rotationY="0"
-                    android:textColor="#3c2e3d" android:translationX="0px" android:translationY="0px"/>
-            <Button
-                    android:text="저장"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" android:id="@+id/readyeditB" android:layout_weight="0.001"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="180px" android:id="@+id/readymadeHeadtxetV" android:textSize="24sp"
+                    android:text="기성 이유식 추가"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="3" android:gravity="center|center_horizontal" android:textStyle="bold"/>
+            <ImageButton
+                    android:src="@drawable/edit"
+                    android:layout_width="300px"
+                    android:layout_height="wrap_content" android:id="@+id/readyeditB" android:layout_weight="0.5"
+                    android:background="#8ACAC7" android:scaleType="fitCenter" android:padding="20px"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="200px" android:background="#C1DCDA">
+                android:layout_height="200px" android:background="#FFFFFF">
             <EditText
                     android:id="@+id/readymadeSearchEt"
                     android:layout_width="match_parent"
@@ -41,18 +41,84 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="2300px" android:gravity="center">
+                android:layout_height="2300px" android:gravity="center_horizontal|top" android:background="#FFFFFF">
             <ImageView
                     android:src="@drawable/_1"
-                    android:layout_width="800px"
+                    android:layout_width="match_parent"
                     android:layout_height="800px" android:id="@+id/readymadeImageV"
-                    tools:srcCompat="@drawable/_1"/>
+                    android:scaleType="fitCenter"/>
             <TextView
-                    android:layout_width="1200px"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/readyInfo"
-                    tools:text="제품명 :\n제조사 :\n탄수화물 :\n단백질 :\n지방 :\n나트륨 :\n콜레스테롤 :\n당류 :"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textSize="24sp"/>
+                    android:text="제품명"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/foodname" android:gravity="center"
+                    android:textSize="24sp" android:layout_marginTop="40px" android:textStyle="bold"
+                    android:textColor="#3C2E3D"/>
+            <TextView
+                    android:text="제조사"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/madecompany" android:gravity="center"
+                    android:textSize="20sp" android:textColor="#555555" android:paddingTop="15px"/>
+            <ImageView
+                    android:src="@drawable/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/imageView6" android:layout_marginTop="20px"
+                    android:layout_marginBottom="60px"/>
+            <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/nutritionFact"
+                    android:layout_marginLeft="10px">
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:gravity="center"
+                        android:layout_marginBottom="60px">
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Carbohydrate" android:text="탄수화물 : "
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="#473A48"
+                            android:layout_weight="1"/>
+                    <TextView
+                            android:text="단백질 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Protein" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                </TableRow>
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:gravity="center"
+                        android:layout_marginBottom="60px">
+                    <TextView
+                            android:text="지방 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Fat" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text="나트륨 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Sodium" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                </TableRow>
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:gravity="center"
+                        android:layout_marginBottom="60px">
+                    <TextView
+                            android:text="콜레스테롤 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Cholesterol" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text="당 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Sugars" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                </TableRow>
+            </TableLayout>
+            <ImageView
+                    android:src="@drawable/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/imageView10"
+                    android:layout_marginBottom="20px"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
@@ -60,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="clip_horizontal|center_horizontal|center_vertical">
             <Button
-                    android:text="Button"
+                    android:text="Camera"
                     android:layout_width="800px"
                     android:layout_height="200px" android:id="@+id/readymadepicB"
             />
@@ -75,11 +141,10 @@
             android:layout_marginTop="400px">
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/foodNameSearchedRecyclerView"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#BCBCBC"
-        />
+                android:background="#C0DBD9"
+                android:visibility="gone"/>
     </LinearLayout>
 
 </FrameLayout>
