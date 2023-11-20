@@ -61,7 +61,7 @@
             <TextView
                     android:text="아이 성별"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView4" android:textSize="18sp"
+                    android:layout_height="wrap_content" android:id="@+id/vaccinename" android:textSize="18sp"
                     android:layout_marginRight="120px" android:textColor="#251A27"/>
             <RadioGroup
                     android:layout_width="wrap_content"

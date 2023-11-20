@@ -24,7 +24,7 @@
                     android:layout_marginTop="35px"/>
             <HorizontalScrollView
                     android:layout_width="1300px"
-                    android:layout_height="200px" android:id="@+id/conditionselect">
+                    android:layout_height="200px" android:id="@+id/conditionselect2">
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
@@ -73,11 +73,19 @@
                     android:layout_height="wrap_content" android:id="@+id/imageView9"/>
             <ScrollView
                     android:layout_width="1300px"
-                    android:layout_height="1100px" android:id="@+id/conditionsetting">
+                    android:layout_height="1100px" android:id="@+id/conditionsetting2">
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+                    <TextView
+                            android:text="시작 시간: "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/starttime" android:textSize="20sp"/>
+                    <TextView
+                            android:text="완료 시간:"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/finishtime" android:textSize="20sp"/>
                 </LinearLayout>
             </ScrollView>
             <LinearLayout
@@ -88,6 +96,11 @@
                         android:src="@drawable/save"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/save" android:layout_weight="1"
+                        android:scaleType="fitCenter" android:background="#FEFEFE" android:padding="30px"/>
+                <ImageButton
+                        android:src="@drawable/remove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/remove" android:layout_weight="1"
                         android:scaleType="fitCenter" android:background="#FEFEFE" android:padding="30px"/>
             </LinearLayout>
         </LinearLayout>

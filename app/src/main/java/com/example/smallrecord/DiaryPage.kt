@@ -128,15 +128,21 @@ class DiaryPage : AppCompatActivity() {
         val doList = findViewById<ListView>(R.id.doList)
 
         doCountButton.setOnClickListener{
-            val dialog = Dialog(this)
+            val dialog = Dialog(this, R.style.TransparentDialogStyle)
             val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_writediary, null)
             dialog.setContentView(dialogView)
 
-            val window = dialog.window
-            val layoutParams = WindowManager.LayoutParams()
-            layoutParams.copyFrom(window!!.attributes)
-            layoutParams.width = (resources.displayMetrics.widthPixels)
-            window.attributes = layoutParams
+            val plus = dialogView.findViewById<ImageButton>(R.id.save)
+            plus.setOnClickListener {
+                val time = arrayOf(getCurrentTime())
+                val id = diaryArrayList.size.toLong()
+
+                val diaryItem = DiaryItem(id, time[0], imageId[1], name[1], buttonImage[0])
+                diaryArrayList.add(diaryItem)
+                binding.diaryList.adapter = DiaryAdapter(this, diaryArrayList)
+                //doList.visibility = ListView.GONE
+                dialog.dismiss() // 다이얼로그 닫기
+            }
 
             dialog.show()
 
@@ -160,22 +166,6 @@ class DiaryPage : AppCompatActivity() {
         // 어댑터 설정
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
         doList.adapter = adapter
-
-        doList.setOnItemClickListener { _, _, position, _ ->
-            val time = arrayOf(getCurrentTime())
-            val selectedTitle = itemList[position]
-
-            when (selectedTitle) {
-                "똥싸기" -> i=0
-                "밥먹기" -> i=1
-                "잠자기" -> i=2
-            }
-
-            val diaryItem = DiaryItem(time[0], imageId[i], name[i], buttonImage[0])
-            diaryArrayList.add(diaryItem)
-            binding.diaryList.adapter = DiaryAdapter(this, diaryArrayList)
-            doList.visibility = ListView.GONE
-        }
 
 
 
