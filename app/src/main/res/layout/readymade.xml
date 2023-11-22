@@ -73,12 +73,23 @@
                         android:layout_height="match_parent" android:gravity="center"
                         android:layout_marginBottom="60px">
                     <TextView
+                            android:text="탄수화물 (g): "
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" android:id="@+id/Carbohydrate" android:text="탄수화물 : "
+                            android:layout_height="wrap_content" android:id="@+id/CarT"
                             android:textSize="18sp" android:textStyle="bold" android:textColor="#473A48"
                             android:layout_weight="1"/>
                     <TextView
-                            android:text="단백질 : "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/Carbohydrate" android:text=""
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="#473A48"
+                            android:layout_weight="1"/>
+                    <TextView
+                            android:text="단백질 (g): "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/ProteinT" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text=""
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" android:id="@+id/Protein" android:textSize="18sp"
                             android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
@@ -88,12 +99,22 @@
                         android:layout_height="match_parent" android:gravity="center"
                         android:layout_marginBottom="60px">
                     <TextView
-                            android:text="지방 : "
+                            android:text="지방 (g): "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/FatT" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text=""
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" android:id="@+id/Fat" android:textSize="18sp"
                             android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
                     <TextView
-                            android:text="나트륨 : "
+                            android:text="나트륨 (mg): "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/SodiumT" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text=""
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" android:id="@+id/Sodium" android:textSize="18sp"
                             android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
@@ -103,12 +124,22 @@
                         android:layout_height="match_parent" android:gravity="center"
                         android:layout_marginBottom="60px">
                     <TextView
-                            android:text="콜레스테롤 : "
+                            android:text="콜레스테롤 (mg): "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/CholesterolT" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text=""
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" android:id="@+id/Cholesterol" android:textSize="18sp"
                             android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
                     <TextView
-                            android:text="당 : "
+                            android:text="당 (g): "
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:id="@+id/SugarsT" android:textSize="18sp"
+                            android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>
+                    <TextView
+                            android:text=""
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" android:id="@+id/Sugars" android:textSize="18sp"
                             android:textStyle="bold" android:textColor="#473A48" android:layout_weight="1"/>

@@ -1,72 +1,73 @@
 package com.example.smallrecord
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.google.gson.JsonParser
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.io.PrintWriter
 import java.net.Socket
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.buildJsonObject
-import kotlinx.serialization.json.put
+
+import io.ktor.http.*
+import io.ktor.http.ContentType.Application.Json
+import io.ktor.http.cio.websocket.*
+import kotlinx.coroutines.*
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import org.json.JSONObject
+import org.json.JSONTokener
+import java.lang.StringBuilder
+
 
 class WebSocketManager {
 
     private var socket: Socket? = null
     private var reader: BufferedReader? = null
     private var writer: PrintWriter? = null
+    private var jsonResponse: JSONObject ?= null
+    @OptIn(DelicateCoroutinesApi::class)
+    fun sendPostToServer(serverSendPost: String, message: JsonObject): JSONObject? {
 
-    fun sendPostToServer(serverSendPost: String, message: JsonObject) {
+
         GlobalScope.launch(Dispatchers.IO) {
-            try {
-                // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
-                socket = Socket("192.168.35.7", 9999)
-
-                // 서버와 통신을 위한 입출력 스트림 생성
-                reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
-                writer = PrintWriter(socket!!.getOutputStream(), true)
 
 
+            // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
+            socket = Socket("192.168.35.7", 9999)
+
+            // 서버와 통신을 위한 입출력 스트림 생성
+            reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
+            writer = PrintWriter(socket!!.getOutputStream(), true)
 
 
-                // POST 요청의 JSON 데이터 생성
-                val jsonBody = buildJsonObject {
-                    put("loginId", "asd123")
-                    put("password", "password1!")
-                    put("name", "권구협")
-                    put("birthDate", "2001-01-01")
-                    put("gender", "WOMAN")
-                    put("email", "asd123@gmail.com")
+            // POST 요청 메시지 구성
+            val postMessage = buildPostMessage(serverSendPost, message)
+            println(postMessage)
+
+            // 서버로 POST 요청 전송
+            writer!!.println(postMessage)
+
+            // 서버 응답 받기
+            val response: String
+            var line: String? = reader!!.readLine()
+
+
+            while (true) {
+
+                line = reader!!.readLine()
+
+                if (line.startsWith("{")) {
+                    response = line
+                    jsonResponse = JSONObject(response)
+                    println(jsonResponse!!.getJSONObject("data").getString("accessToken"))
+                    break
                 }
 
-
-                // POST 요청 메시지 구성
-                val postMessage = buildPostMessage(serverSendPost,message)
-                println(postMessage)
-
-                // 서버로 POST 요청 전송
-                writer!!.println(postMessage)
-
-
-                // 서버 응답 받기
-                val response = reader!!.readLine()
-                println("서버 응답: $response")
-
-            } catch (e: IOException) {
-                e.printStackTrace()
-            } finally {
-                // 리소스 정리
-                try {
-                    reader?.close()
-                    writer?.close()
-                    socket?.close()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
             }
+
+
         }
+        return jsonResponse
     }
 
     private fun buildPostMessage(serverSendPost: String,jsonBody: JsonObject): String {
@@ -92,4 +93,24 @@ class WebSocketManager {
         return postMessage
     }
 
+
+
+    fun extractJsonFromBody(log: StringBuilder): String? {
+        val startToken = "{"
+        val endToken = "}"
+
+        val startIndex = log.indexOf(startToken)
+        val endIndex = log.lastIndexOf(endToken)
+
+        return if (startIndex != -1 && endIndex != -1 && endIndex > startIndex) {
+            log.substring(startIndex, endIndex + 1)
+        } else {
+            null
+        }
+    }
+
+
+
 }
+
+

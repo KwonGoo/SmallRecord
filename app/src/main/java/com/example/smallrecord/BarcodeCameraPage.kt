@@ -1,17 +1,18 @@
 package com.example.smallrecord
 
+import com.example.smallrecord.foodreadypage.Food_ReadyPage
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.ResultPoint
 import com.google.zxing.client.android.BeepManager
@@ -19,25 +20,39 @@ import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 import com.journeyapps.barcodescanner.DefaultDecoderFactory
+import kotlinx.coroutines.*
+import kotlinx.serialization.json.*
 import java.util.*
-import kotlinx.serialization.json.buildJsonObject
 import org.json.JSONObject
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.buildJsonObject
-import kotlinx.serialization.json.put
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.PrintWriter
+import java.net.Socket
 
 
 class BarcodeCameraPage : AppCompatActivity() {
     private var beepManager: BeepManager? = null
     var lastText: String? = null
     private lateinit var context: Context
-    private var CAMERA_REQUEST_CODE = 2
-    private val PERMISSION_MULTI_CODE = 100
     private lateinit var barcodeScanner: DecoratedBarcodeView
     private val DELAY = 10000 // 1 second
-    private val readyList = mutableListOf<String>();
-    private val webSocketManager = WebSocketManager()
-    private val mapper: ObjectMapper? = null
+    private var socket: Socket? = null
+    private var reader: BufferedReader? = null
+    private var writer: PrintWriter? = null
+    var foodInfo:JSONObject ?= null
+    var foodName:String = ""
+    lateinit var makeName:String
+    lateinit var calorie:String
+    lateinit var protein:String
+    lateinit var fat:String
+    lateinit var sugar:String
+    lateinit var sodium:String
+    lateinit var capacity:String
+    lateinit var carbohydrate:String
+    lateinit var cholesterol:String
+
+
+
 
     private val callback: BarcodeCallback = object : BarcodeCallback {
         private var lastTimestamp: Long = 0
@@ -50,21 +65,95 @@ class BarcodeCameraPage : AppCompatActivity() {
                 }
 
                 val sendMessage = buildJsonObject {
-                    put("messageType","barcodeNum")
                     put("barcodeNum",result.text)
                 }
-              //  webSocketManager.connectToServer(sendMessage.toString()+"\n")
 
 
-                Toast.makeText(context, sendMessage.toString(), Toast.LENGTH_SHORT).show()
                 lastText = result.text
+               // var aaa = sendBarcode(sendMessage)
 
-                finish()
+
+
+              //  println("1 $aaa")
+
+
+
+                    var messageString = """{"barcodeNum" : "$lastText"}"""
+                    var jsonResponse: JSONObject?
+                    var foodRealInfo: JSONObject? = null
+
+
+                    GlobalScope.launch {
+
+                        // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
+                        socket = Socket("192.168.35.7", 9999)
+
+                        // 서버와 통신을 위한 입출력 스트림 생성
+                        reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
+                        writer = PrintWriter(socket!!.getOutputStream(), true)
+
+
+                        // POST 요청 메시지 구성
+                        val postMessage = """
+                          GET /api/food/barcode HTTP/1.1
+                          Host: 192.168.35.7:9999
+                          Content-Type: application/json
+                          Content-Length: ${messageString.toByteArray(Charsets.UTF_8).size}
+
+                          $messageString
+                          """.trimIndent()
+                        println(postMessage)
+
+                        // 서버로 POST 요청 전송
+                        writer!!.println(postMessage)
+
+                        // 서버 응답 받기
+                        val response: String
+                        var line: String? = reader!!.readLine()
+
+
+                        while (true) {
+
+                            line = reader!!.readLine()
+
+
+
+                            if (line.startsWith("{")) {
+
+                                response = line
+                                jsonResponse = JSONObject(response)
+                                foodRealInfo = jsonResponse?.getJSONObject("data")
+
+
+                                withContext(Dispatchers.Main) {
+                                    // food_readyPage로 데이터 전달
+                                    val intent = Intent(this@BarcodeCameraPage, Food_ReadyPage::class.java)
+                                    intent.putExtra("foodInfo", foodRealInfo.toString())
+
+
+                                    startActivity(intent)
+                                }
+
+                                break
+                            } else {
+
+                            }
+
+                        }
+                        println(foodRealInfo)
+                    }
+                    println(foodRealInfo)
+
+
+
+
+
             }
         }
 
         override fun possibleResultPoints(resultPoints: List<ResultPoint>) {}
     }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -127,8 +216,6 @@ class BarcodeCameraPage : AppCompatActivity() {
         return true
     }
 
-
-
     override fun onResume() {
         super.onResume()
         barcodeScanner!!.resume()
@@ -154,4 +241,9 @@ class BarcodeCameraPage : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
     }
+
+
+
 }
+
+

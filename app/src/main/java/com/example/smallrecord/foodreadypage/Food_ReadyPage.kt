@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,20 +20,55 @@ import com.example.smallrecord.FoodPage
 import com.example.smallrecord.R
 import com.example.smallrecord.entity.FoodEntity
 import com.example.smallrecord.entity.FoodEntitySampleData
+import com.google.gson.JsonObject
 import kotlinx.coroutines.*
+import org.json.JSONObject
 
 class Food_ReadyPage : AppCompatActivity() {
+
+
+    companion object {
+        const val REQUEST_CODE_BARCODE = 1
+    }
 
     private lateinit var foodNameSearchedRecyclerView: RecyclerView// = findViewById<ListView>(R.id.foodNameSearchedRecyclerView)
     private lateinit var foodNameSearchedAdapter: FoodNameSearchedAdapter// = FoodNameSearchedAdapter(this)
 
-    @SuppressLint("MissingInflatedId")
+
+
+            @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.readymade)
 
-        val barCodePage = BarcodeCameraPage()
-        var barCodeNum = ""
+                val foodInfo = intent.getStringExtra("foodInfo")
+                if(foodInfo != null) {
+                    val foodNameTextView: TextView = findViewById(R.id.foodname)
+                    val madeNameTextView: TextView = findViewById(R.id.madecompany)
+                    val carbohydrateTextView: TextView = findViewById(R.id.Carbohydrate)
+                    val proteinTextView: TextView = findViewById(R.id.Protein)
+                    val fatTextView: TextView = findViewById(R.id.Fat)
+                    val sodiumTextView: TextView = findViewById(R.id.Sodium)
+                    val cholesterolTextView: TextView = findViewById(R.id.Cholesterol)
+                    val sugarsTextView: TextView = findViewById(R.id.Sugars)
+
+                    val foodInfoJson = JSONObject(foodInfo)
+
+                    foodNameTextView.text = foodInfoJson.getString("product_name")
+                    madeNameTextView.text = foodInfoJson.getString("manufacturer")
+                    carbohydrateTextView.text = foodInfoJson.getString("carbohydarte_g")
+                    proteinTextView.text = foodInfoJson.getString("protein_g")
+                    fatTextView.text = foodInfoJson.getString("fat_g")
+                    sodiumTextView.text = foodInfoJson.getString("sodium_mg")
+                    cholesterolTextView.text = foodInfoJson.getString("cholesterol_mg")
+                    sugarsTextView.text = foodInfoJson.getString("total_sugars_g")
+                }
+
+
+                var barCodeNum = ""
         val actionBar: ActionBar? = supportActionBar
 
         fun getBarcodeNum(barcodeCameraPage: BarcodeCameraPage): String {
@@ -135,7 +171,26 @@ class Food_ReadyPage : AppCompatActivity() {
                         else -> ""
                     }
          */
+
+
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_CODE_BARCODE && resultCode == RESULT_OK) {
+            // 여기서 데이터를 가져와서 사용하면 됩니다.
+            val foodInfoString = data?.getStringExtra("foodInfo")
+
+            // foodInfoString을 원하는 형식으로 파싱하거나 사용합니다.
+            // 예: JSON 형식의 문자열을 JSONObject로 변환
+            val foodInfo = JSONObject(foodInfoString)
+            println("11111111 $foodInfo")
+
+            // 이제 foodInfo를 사용할 수 있습니다.
+        }
+    }
+
 
     private fun reqFoodNameList(userSearchFoodName: String) {
         println("afterTextChanged userSearchFoodName : $userSearchFoodName")
@@ -173,5 +228,10 @@ class Food_ReadyPage : AppCompatActivity() {
         println("onClickListener : " + foodEntity)
 //        foodEntity.
     }
+
+
+
+
+
 
 }

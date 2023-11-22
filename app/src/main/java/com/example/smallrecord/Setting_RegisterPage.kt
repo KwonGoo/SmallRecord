@@ -88,8 +88,8 @@ class Setting_RegisterPage : AppCompatActivity() {
                 put("email",email)
             }
 
-            webSocketManager.sendPostToServer(post, sendMessage)
 
+           println(webSocketManager.sendPostToServer(post, sendMessage))
 
 
             val intent = Intent(this, Setting_LoginPage::class.java)

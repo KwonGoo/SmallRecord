@@ -104,7 +104,7 @@ class CommunityWrite : AppCompatActivity() {
                 put("email","asd123@gmail.com")
             }
             //webSocketManager.connectToServer(sendMessage.toString()+"\n")
-            webSocketManager.sendPostToServer(post, sendMessage)
+          //  webSocketManager.sendPostToServer(post, sendMessage)
 
             setResult(RESULT_OK, intent)
             finish()
