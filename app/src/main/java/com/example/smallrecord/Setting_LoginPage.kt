@@ -80,11 +80,7 @@ class Setting_LoginPage : AppCompatActivity() {
             }
 
 
-
-
-
                     val webSocketManager = WebSocketManager()
-
 
 
                     val sendMessage = buildJsonObject {
@@ -96,19 +92,12 @@ class Setting_LoginPage : AppCompatActivity() {
                         token = sendLoginMessage(sendMessage)
                         println(token)
 
-                    val appPreferences = AppPreferences(applicationContext)
-                    appPreferences.saveUserCredentials(userId)
-                    Toast.makeText(applicationContext, "${userId}님 환영합니다.", Toast.LENGTH_SHORT).show()
-
-
-
-                        var intent = Intent(this, SettingPage::class.java)
+                    val appPreferences = AppPreferences(applicationContext, webSocketManager)
+                    if (appPreferences.isLoggedIn()) {
+                      Toast.makeText(applicationContext, "${userId}님 환영합니다.", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, SettingPage::class.java)
                         startActivity(intent)
-
-
-
-
-
+                    }
 
 
 

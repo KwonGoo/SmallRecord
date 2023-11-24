@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 
 class Setting_MyPage : AppCompatActivity() {
 
@@ -28,7 +29,17 @@ class Setting_MyPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
-        val appPreferences = AppPreferences(applicationContext)
+        val appPreferences = AppPreferences(this, WebSocketManager())
+        val textName = findViewById<TextView>(R.id.mainName)
+        val textBirth = findViewById<TextView>(R.id.birthtxt)
+        val changeName = appPreferences.getName()
+        val changeBirth = appPreferences.getBirthDate()
+
+        if (appPreferences.isLoggedIn()){
+            textName.text = "$changeName"
+            textBirth.text = "$changeBirth 애 태어나 건강하게 자랐어요!"
+        }
+
         val Logout = findViewById<Button>(R.id.logout)
         Logout.setOnClickListener{
             appPreferences.clearUserCredentials()

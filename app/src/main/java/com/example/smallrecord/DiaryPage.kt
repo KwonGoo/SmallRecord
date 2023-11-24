@@ -27,6 +27,7 @@ class DiaryPage : AppCompatActivity() {
             private lateinit var binding : DiaryBinding
             private lateinit var diaryArrayList: ArrayList<DiaryItem>
             private val webSocketManager = WebSocketManager()
+            var i = 0;
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -133,11 +134,36 @@ class DiaryPage : AppCompatActivity() {
             dialog.setContentView(dialogView)
 
             val plus = dialogView.findViewById<ImageButton>(R.id.save)
+            val seletefood = dialogView.findViewById<ImageButton>(R.id.seletefood)
+            val selectdiaper = dialogView.findViewById<ImageButton>(R.id.selectdiaper)
+            val selectsleep = dialogView.findViewById<ImageButton>(R.id.selectsleep)
+
+            selectdiaper.setOnClickListener {
+                i = 0
+                selectdiaper.setBackgroundColor(Color.parseColor("#FFFCAD83"))
+                seletefood.setBackgroundColor(Color.parseColor("#FEFEFE"))
+                selectsleep.setBackgroundColor(Color.parseColor("#FEFEFE"))
+            }
+
+            seletefood.setOnClickListener {
+                i = 1
+                seletefood.setBackgroundColor(Color.parseColor("#FFFCAD83"))
+                selectdiaper.setBackgroundColor(Color.parseColor("#FEFEFE"))
+                selectsleep.setBackgroundColor(Color.parseColor("#FEFEFE"))
+            }
+
+            selectsleep.setOnClickListener {
+                i = 2
+                selectsleep.setBackgroundColor(Color.parseColor("#FFFCAD83"))
+                seletefood.setBackgroundColor(Color.parseColor("#FEFEFE"))
+                selectdiaper.setBackgroundColor(Color.parseColor("#FEFEFE"))
+            }
+
             plus.setOnClickListener {
                 val time = arrayOf(getCurrentTime())
                 val id = diaryArrayList.size.toLong()
 
-                val diaryItem = DiaryItem(id, time[0], imageId[1], name[1], buttonImage[0])
+                val diaryItem = DiaryItem(id, time[0], imageId[i], name[i], buttonImage[0])
                 diaryArrayList.add(diaryItem)
                 binding.diaryList.adapter = DiaryAdapter(this, diaryArrayList)
                 //doList.visibility = ListView.GONE

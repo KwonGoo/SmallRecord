@@ -81,11 +81,17 @@
                     <TextView
                             android:text="시작 시간: "
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/starttime" android:textSize="20sp"/>
+                            android:layout_height="wrap_content" android:id="@+id/starttime" android:textSize="20sp"
+                            android:gravity="center"/>
+                    <ImageView
+                            android:src="@drawable/divider1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/imageView11"/>
                     <TextView
                             android:text="완료 시간:"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/finishtime" android:textSize="20sp"/>
+                            android:layout_height="wrap_content" android:id="@+id/finishtime" android:textSize="20sp"
+                            android:gravity="center"/>
                 </LinearLayout>
             </ScrollView>
             <LinearLayout

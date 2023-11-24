@@ -111,6 +111,29 @@ class WebSocketManager {
 
 
 
+    @OptIn(DelicateCoroutinesApi::class)
+    fun getUserInfoFromServer(userId: String): JSONObject? {
+        val requestMessage = buildUserInfoRequest(userId)
+        writer?.println(requestMessage)
+
+        // 서버 응답 받기
+        val response: String? = reader?.readLine()
+
+        // 예를 들어, 서버에서 JSON 형식으로 사용자 정보를 제공하는 경우
+        return response?.let { extractJsonFromBody(StringBuilder(it)) }?.let { JSONObject(it) }
+    }
+
+    private fun buildUserInfoRequest(name: String): String {
+        return """
+            GET_USER_INFO HTTP/1.1
+            Host: 192.168.35.7:9999
+            Content-Type: application/json
+            Content-Length: ${name.toByteArray(Charsets.UTF_8).size}
+
+            {"name": "$name"}
+        """.trimIndent()
+    }
+
 }
 
 

@@ -99,11 +99,13 @@ class SettingPage : AppCompatActivity() {
             editor.apply()
         }
 
-        val appPreferences = AppPreferences(applicationContext)
+        val appPreferences = AppPreferences(applicationContext, WebSocketManager())
         if (appPreferences.isLoggedIn()) {
             // 로그인된 상태
             val textText = findViewById<TextView>(R.id.babyname)
+            val changetext = appPreferences.getName()
 
+            textText.text = "$changetext"
             LoginPage.visibility = View.GONE;
             MyPage.visibility = View.VISIBLE;
         } else {
