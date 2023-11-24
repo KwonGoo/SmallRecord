@@ -30,6 +30,7 @@ android {
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,6 +38,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 }
 

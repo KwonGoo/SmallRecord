@@ -1,92 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="300px" android:background="#FDAE84" android:gravity="center">
-        <ImageButton
-                android:src="@drawable/x"
-                android:layout_width="200px"
-                android:id="@+id/babyback" android:layout_height="wrap_content" android:background="#FCAD83"
-                android:scaleType="fitCenter"/>
-        <ImageView
-                app:srcCompat="@drawable/babyicon"
-                android:layout_width="150px"
-                android:layout_height="wrap_content" android:id="@+id/imageView"
-                android:layout_marginRight="20px"/>
-        <TextView
-                android:text="김응애의 예방 접종 기록"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"
-                android:textSize="16sp" android:textStyle="bold" android:textColor="#FDFCFC"/>
-        <ImageButton
-                android:src="@drawable/babylist2"
-                android:layout_width="200px"
-                android:layout_height="wrap_content" android:id="@+id/changebaby" android:background="#FCAD83"
-                android:scaleType="fitCenter" android:padding="15px"/>
-    </LinearLayout>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="200px">
-        <Button
-                android:text="날짜별"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/month" android:layout_weight="1"
-                android:background="@drawable/vaccine_select" android:textSize="16sp" android:textColor="#3C2E3D"/>
-        <Button
-                android:text="현황"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/now" android:layout_weight="1"
-                android:background="@drawable/vaccine_null" android:textSize="16sp" android:textColor="#3C2E3D"/>
-    </LinearLayout>
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
         <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="100px" android:gravity="center_vertical">
-                <TextView
-                        android:text="2000년 00월"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="1" android:textSize="16sp"
-                        android:textStyle="bold" android:textColor="#3C2E3D"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="400px" android:background="#F8ECEC">
-                <ImageView
-                        app:srcCompat="@drawable/vaccine"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" android:id="@+id/imageView2" android:layout_weight="2"
-                        android:scaleType="fitCenter" android:padding="50px"/>
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" android:layout_weight="1"
-                        android:gravity="center_vertical">
-                    <TextView
-                            android:text="접종 이름 어쩌구"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/vaccinename" android:textSize="14sp"
-                            android:textColor="#3C2E3D"/>
-                    <TextView
-                            android:text="국가예방접종 \n권장시기 : \n접종일 : "
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/vaccinecontents"
-                            android:textSize="14sp" android:textColor="#3C2E3D"/>
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_height="300px"
+                android:background="#FDAE84"
+                android:gravity="center">
+
+            <ImageButton
+                    android:src="@drawable/x"
+                    android:layout_width="200px"
+                    android:id="@+id/babyback"
+                    android:layout_height="wrap_content"
+                    android:background="#FCAD83"
+                    android:scaleType="fitCenter"/>
+
+            <ImageView
+                    app:srcCompat="@drawable/babyicon"
+                    android:layout_width="150px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:layout_marginRight="20px"/>
+
+            <TextView
+                    android:text="김응애의 예방 접종 기록"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FDFCFC"/>
+
+            <ImageButton
+                    android:src="@drawable/babylist2"
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/changebaby"
+                    android:background="#FCAD83"
+                    android:scaleType="fitCenter"
+                    android:padding="15px"/>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="200px">
+
+            <Button
+                    android:text="시기별"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/month"
+                    android:layout_weight="1"
+                    android:background="@drawable/vaccine_select"
+                    android:textSize="16sp"
+                    android:textColor="#3C2E3D"/>
+
+            <Button
+                    android:text="현황"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/now"
+                    android:layout_weight="1"
+                    android:background="@drawable/vaccine_null"
+                    android:textSize="16sp"
+                    android:textColor="#3C2E3D"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/vaccinelist"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
+</layout>
