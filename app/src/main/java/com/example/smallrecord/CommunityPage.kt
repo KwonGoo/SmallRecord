@@ -26,7 +26,6 @@ class CommunityPage : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var itemList: MutableList<String>
     private lateinit var adapter: ArrayAdapter<String>
-    private val webSocketManager = WebSocketManager()
     private lateinit var useJson:JSONObject
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -40,6 +39,7 @@ class CommunityPage : AppCompatActivity() {
 
         listView = findViewById(R.id.listView)
         listView.adapter = adapter
+
 
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
@@ -95,10 +95,11 @@ class CommunityPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
+
         GlobalScope.launch {
             val client = OkHttpClient()
             val request = Request.Builder()
-                .url("http://172.20.10.2:9999/api/community/list")
+                .url("http://172.16.37.219:9999/api/community/list")
                 .build()
 
 
@@ -126,7 +127,29 @@ class CommunityPage : AppCompatActivity() {
             }
 
         }
+
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, position, _ ->
+                // 선택한 게시글의 ID 가져오기
+                val selectedPostId = getPostIdFromPosition(position)
+
+                println(selectedPostId)
+
+                // CommunityPost 액티비티로 이동
+                val intent = Intent(this, CommunityPost::class.java)
+                intent.putExtra("id", selectedPostId)
+                startActivity(intent)
+                overridePendingTransition(0, 0)
+            }
     }
+
+    private fun getPostIdFromPosition(position: Int): Int {
+        // 선택한 포지션의 게시글 ID를 가져오는 로직 추가
+        // 여기서는 가정으로 position을 그대로 사용
+        return position +1
+    }
+
+
 
 
 
@@ -134,7 +157,7 @@ class CommunityPage : AppCompatActivity() {
     object body {
 
     }
-    }
+}
 
 
 
