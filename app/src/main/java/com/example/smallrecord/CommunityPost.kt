@@ -143,7 +143,7 @@ class CommunityPost : AppCompatActivity() {
 
 
     private suspend fun getPostDetailsFromServer(id: String?): JSONObject? {
-        val url = "http://172.16.37.219:9999/api/community/post/$id"
+        val url = "http://10.210.8.129:9999/api/community/post/$id"
         return try {
             val response = withContext(Dispatchers.IO) {
                 OkHttpClient().newCall(Request.Builder().url(url).build()).execute()
@@ -207,7 +207,7 @@ class CommunityPost : AppCompatActivity() {
 
     private fun fetchComments(id: String?) {
         // 게시글에 대한 댓글 목록을 가져오는 네트워크 작업
-        val url = "http://172.16.37.219:9999/api/community/comment/$id"
+        val url = "http://10.210.8.129:9999/api/community/comment/$id"
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val comments = getCommentsFromServer(id)
@@ -217,7 +217,6 @@ class CommunityPost : AppCompatActivity() {
 
                     // 댓글 목록을 contentTextView에 추가
                     val commentsText = comments.joinToString("\n") { "\"${it.comment}\"" }
-                    contentTextView.text = "댓글 목록:\n$commentsText"
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -226,7 +225,7 @@ class CommunityPost : AppCompatActivity() {
     }
 
     private suspend fun getCommentsFromServer(id: String?): List<Comment> {
-        val url = "http://172.16.37.219:9999/api/community/comment/$id"
+        val url = "http://10.210.8.129:9999/api/community/comment/$id"
         return try {
             val response = withContext(Dispatchers.IO) {
                 OkHttpClient().newCall(Request.Builder().url(url).build()).execute()
@@ -275,7 +274,7 @@ class CommunityPost : AppCompatActivity() {
 
 
     private suspend fun sendCommentToServer(id: String?, comment: String): Boolean {
-        val url = "http://172.16.37.219:9999/api/community/post/$id"
+        val url = "http://10.210.8.129:9999/api/community/post/$id"
         val json = JSONObject().apply {
             put("comment", comment)
         }

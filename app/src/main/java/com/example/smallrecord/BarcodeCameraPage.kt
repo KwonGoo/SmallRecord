@@ -140,9 +140,7 @@ class BarcodeCameraPage : AppCompatActivity() {
                             }
 
                         }
-                        println(foodRealInfo)
                     }
-                    println(foodRealInfo)
 
 
 

@@ -105,7 +105,7 @@ class CommunityWrite : AppCompatActivity() {
                 .build()
 
             val request = Request.Builder()
-                .url("http://172.16.37.219/api/community/postup")
+                .url("http://10.210.8.129:9999/api/community/postup")
                 .post(
                     RequestBody.create(
                         "application/json".toMediaType(),

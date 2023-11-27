@@ -69,10 +69,10 @@
                 android:layout_width="0px"
                 android:layout_height="230px" android:layout_weight="5">
             <TextView
-                    android:text="김응애"
+                    android:text="옥수수"
                     android:layout_width="match_parent"
                     android:layout_height="0px" android:id="@+id/nameView" android:layout_weight="1"
-                     android:textAllCaps="false"
+                    android:textAllCaps="false"
                     android:gravity="center"/>
             <TextView
                     android:text="2개월 16일 (D+77)"

@@ -79,7 +79,7 @@
                             android:layout_height="250px" android:id="@+id/imageView"/>
                     <TextView
                             android:clickable="true"
-                            android:text="응애(이)가 똥을 싸면\n눌러주세요!"
+                            android:text="수수(이)가 똥을 싸면\n눌러주세요!"
                             android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/shitTime"
@@ -97,7 +97,7 @@
                             android:layout_height="250px" android:id="@+id/imageView2"/>
                     <TextView
                             android:gravity="center"
-                            android:text="응애(이)가 밥 먹으면\n눌러주세요!"
+                            android:text="수수(이)가 밥 먹으면\n눌러주세요!"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/foodTime" android:layout_weight="1"
                             android:textSize="16sp" android:textAlignment="center" android:textColor="#3C2E3D"/>
@@ -119,7 +119,7 @@
                     />
                     <TextView
                             android:gravity="center"
-                            android:text="응애(이)가 일어나면 \n눌러주세요!"
+                            android:text="수수(이)가 일어나면 \n눌러주세요!"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/wakeTime"
                             android:textSize="16sp" android:textAlignment="center" android:layout_weight="1"
@@ -135,7 +135,7 @@
                             android:background="@drawable/vaccine"/>
                     <TextView
                             android:gravity="center"
-                            android:text="응애의\n예방접종기록"
+                            android:text="수수의\n예방접종기록"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:id="@+id/textView10"
                             android:textSize="16sp" android:textAlignment="center" android:layout_weight="1"

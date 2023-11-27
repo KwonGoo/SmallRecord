@@ -13,15 +13,41 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Switch
 import android.widget.TextView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.PrintWriter
+import java.net.Socket
 
 class SettingPage : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
+
+    private var socket: Socket? = null
+    private var reader: BufferedReader? = null
+    private var writer: PrintWriter? = null
+    private var jsonResponse: JSONObject? = null
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting)
+        var accessToken:String ?= ""
 
+
+        val loginResponse = intent.getStringExtra("loginResponse")
+        if(loginResponse != null) {
+            val loginResponseJson = JSONObject(loginResponse)
+            val token = loginResponseJson.getString("accessToken")
+            accessToken = "Bearer $token"
+
+            println("여긴가 $accessToken")
+        }
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
@@ -70,9 +96,43 @@ class SettingPage : AppCompatActivity() {
         val MyPage = findViewById<Button>(R.id.mypage)
 
         MyPage.setOnClickListener {
-            val intent = Intent(this, Setting_MyPage::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
+
+            GlobalScope.launch {
+
+                // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
+                socket = Socket("10.210.8.129", 9999)
+
+                // 서버와 통신을 위한 입출력 스트림 생성
+                reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
+                writer = PrintWriter(socket!!.getOutputStream(), true)
+
+
+                // POST 요청 메시지 구성
+                val client = OkHttpClient()
+                val request = Request.Builder()
+                    .url("http://10.210.8.129:9999/api/member/info")
+                    .addHeader("Authorization", accessToken.toString())
+                    .build()
+
+                var nnn = client.newCall(request).execute()
+                val qqq = nnn.body?.string()
+                println(qqq) // {"resultCode":"SUCCESS","data":{"id":1,"loginId":"aaa111","name":"아아아아","birthDate":"20010101","gender":"남","email":"assd@gmail.com"},"message":"정상 처리 되었습니다."}
+
+                withContext(Dispatchers.Main){
+
+                    val intent = Intent(this@SettingPage, Setting_MyPage::class.java)
+                    intent.putExtra("accessToken",qqq.toString())
+                    startActivity(intent)
+                    overridePendingTransition(0, 0)
+
+
+
+
+                }
+            }
+
+
+
         }
 
         val LoginPage = findViewById<Button>(R.id.loginpage)
@@ -99,13 +159,9 @@ class SettingPage : AppCompatActivity() {
             editor.apply()
         }
 
-        val appPreferences = AppPreferences(applicationContext, WebSocketManager())
+        val appPreferences = AppPreferences(applicationContext)
         if (appPreferences.isLoggedIn()) {
             // 로그인된 상태
-            val textText = findViewById<TextView>(R.id.babyname)
-            val changetext = appPreferences.getName()
-
-            textText.text = "$changetext"
             LoginPage.visibility = View.GONE;
             MyPage.visibility = View.VISIBLE;
         } else {

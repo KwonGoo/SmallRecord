@@ -33,7 +33,7 @@ class WebSocketManager {
 
 
             // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
-            socket = Socket("192.168.35.7", 9999)
+            socket = Socket("10.210.8.129", 9999)
 
             // 서버와 통신을 위한 입출력 스트림 생성
             reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
@@ -79,7 +79,7 @@ class WebSocketManager {
 
         val postMessage = """
                           $serverSendPost HTTP/1.1
-                          Host: 192.168.35.7:9999
+                          Host: 10.210.8.129:9999
                           Content-Type: application/json
                           Content-Length: ${jsonBodyString.toByteArray(Charsets.UTF_8).size}
 
@@ -126,7 +126,7 @@ class WebSocketManager {
     private fun buildUserInfoRequest(name: String): String {
         return """
             GET_USER_INFO HTTP/1.1
-            Host: 192.168.35.7:9999
+            Host: 10.210.8.129.7:9999
             Content-Type: application/json
             Content-Length: ${name.toByteArray(Charsets.UTF_8).size}
 

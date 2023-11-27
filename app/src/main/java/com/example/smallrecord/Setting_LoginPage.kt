@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.smallrecord.foodreadypage.Food_ReadyPage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,6 +22,7 @@ import java.io.PrintWriter
 import java.net.Socket
 import io.ktor.http.*
 import io.ktor.http.cio.websocket.*
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.JsonObject
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
@@ -48,6 +50,8 @@ class Setting_LoginPage : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting_login)
+
+
 
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
@@ -89,15 +93,76 @@ class Setting_LoginPage : AppCompatActivity() {
                     }
 
 
-                        token = sendLoginMessage(sendMessage)
-                        println(token)
+            var loginResponse:JSONObject?
 
-                    val appPreferences = AppPreferences(applicationContext, webSocketManager)
-                    if (appPreferences.isLoggedIn()) {
-                      Toast.makeText(applicationContext, "${userId}님 환영합니다.", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, SettingPage::class.java)
-                        startActivity(intent)
+            GlobalScope.launch {
+
+                // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
+                socket = Socket("192.168.0.15", 9999)
+
+                // 서버와 통신을 위한 입출력 스트림 생성
+                reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
+                writer = PrintWriter(socket!!.getOutputStream(), true)
+
+
+                // POST 요청 메시지 구성
+                val postMessage = """
+                          POST /api/member/login HTTP/1.1
+                          Host: 192.168.0.15:9999
+                          Content-Type: application/json
+                          Content-Length: ${sendMessage.toString().toByteArray(Charsets.UTF_8).size}
+
+                          $sendMessage
+                          """.trimIndent()
+                println(postMessage)
+
+                // 서버로 POST 요청 전송
+                writer!!.println(postMessage)
+
+                // 서버 응답 받기
+                val response: String
+                var line: String? = reader!!.readLine()
+
+
+                while (true) {
+
+                    line = reader!!.readLine()
+
+
+
+                    if (line.startsWith("{")) {
+
+                        response = line
+                        jsonResponse = JSONObject(response)
+                        loginResponse = jsonResponse?.getJSONObject("data")
+
+
+                        withContext(Dispatchers.Main) {
+                            // food_readyPage로 데이터 전달
+                            val intent = Intent(this@Setting_LoginPage, SettingPage::class.java)
+                            intent.putExtra("loginResponse", loginResponse.toString())
+
+                            startActivity(intent)
+                        }
+
+                        break
+                    } else {
+
                     }
+
+                }
+            }
+
+
+                    val appPreferences = AppPreferences(applicationContext)
+                    appPreferences.saveUserCredentials(userId)
+                    Toast.makeText(applicationContext, "${userId}님 환영합니다.", Toast.LENGTH_SHORT).show()
+
+
+
+
+
+
 
 
 
@@ -128,7 +193,7 @@ class Setting_LoginPage : AppCompatActivity() {
 
 
             // 서버의 IP 주소와 포트 번호를 지정하여 소켓 생성
-            socket = Socket("192.168.0.34", 9999)
+            socket = Socket("192.168.0.15", 9999)
 
             // 서버와 통신을 위한 입출력 스트림 생성
             reader = BufferedReader(InputStreamReader(socket!!.getInputStream()))
@@ -138,7 +203,7 @@ class Setting_LoginPage : AppCompatActivity() {
             // POST 요청 메시지 구성
             val postMessage = """
                           POST /api/member/login HTTP/1.1
-                          Host: 192.168.0.34:9999
+                          Host: 192.168.0.15:9999
                           Content-Type: application/json
                           Content-Length: ${messageString.toByteArray(Charsets.UTF_8).size}
 

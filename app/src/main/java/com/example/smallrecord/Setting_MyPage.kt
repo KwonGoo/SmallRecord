@@ -7,15 +7,38 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageButton
+import kotlinx.coroutines.*
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.PrintWriter
+import java.net.Socket
 import android.widget.TextView
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class Setting_MyPage : AppCompatActivity() {
 
+
+
+    @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting_mypage)
 
+        val mainName = findViewById<TextView>(R.id.mainName)
+        val accessToken = intent.getStringExtra("accessToken")
+
+        println("이거 진짜 $accessToken")
+if(accessToken != null) {
+    val babyInfoJson = JSONObject(accessToken)
+    val babyRealInfo = babyInfoJson.getJSONObject("data")
+
+    println(babyRealInfo.getString("name"))
+
+    mainName.text = babyRealInfo.getString("name")
+}
         val actionBar: ActionBar? = supportActionBar
         if (actionBar != null) {
             actionBar.hide()
@@ -29,16 +52,7 @@ class Setting_MyPage : AppCompatActivity() {
             overridePendingTransition(0, 0)
         }
 
-        val appPreferences = AppPreferences(this, WebSocketManager())
-        val textName = findViewById<TextView>(R.id.mainName)
-        val textBirth = findViewById<TextView>(R.id.birthtxt)
-        val changeName = appPreferences.getName()
-        val changeBirth = appPreferences.getBirthDate()
-
-        if (appPreferences.isLoggedIn()){
-            textName.text = "$changeName"
-            textBirth.text = "$changeBirth 애 태어나 건강하게 자랐어요!"
-        }
+        val appPreferences = AppPreferences(this)
 
         val Logout = findViewById<Button>(R.id.logout)
         Logout.setOnClickListener{
@@ -46,5 +60,9 @@ class Setting_MyPage : AppCompatActivity() {
             val intent = Intent(this, SettingPage::class.java)
             startActivity(intent)
         }
+
+
     }
+
+
 }

@@ -99,7 +99,7 @@ class CommunityPage : AppCompatActivity() {
         GlobalScope.launch {
             val client = OkHttpClient()
             val request = Request.Builder()
-                .url("http://172.16.37.219:9999/api/community/list")
+                .url("http://10.210.8.129:9999/api/community/list")
                 .build()
 
 
